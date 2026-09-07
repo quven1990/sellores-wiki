@@ -1,0 +1,33 @@
+# Sell Ores Wiki
+
+> Independent fan wiki for Sell Ores on Roblox — not affiliated with Roblox Corporation or The Ore Drillers.
+
+Site: https://sellores.site  
+Place ID: 122572082932179  
+Universe ID: 10336278580  
+Last updated: 2026-09-07
+
+## Quick facts
+
+- Sell Ores is an incremental Roblox simulator: roll ores, place them in tunnels, let yellow drones drill crates, then sell for cash.
+- Codes on this site are **reported** from public media until verified in-game. Always confirm Place ID before redeeming.
+- Reported active codes (Sep 2026, verify in-game): ROBLOXSERVERS, ALMIGHTY, SORRYFORDATA, BALANCE, PETFUSION, RELEASE, EXPANSION.
+- Unconfirmed / conflicted (not in Active list): FINALE, ADMINMUTATION, FRAGMENTS, ANOTHERONE, SECRETCODE.
+- Redeem path: Settings (top right) → Codes → paste → Redeem.
+
+## Primary pages
+
+- [Home](https://sellores.site/): Hub for codes, pets, gears, beginner loop, updates
+- [Codes](https://sellores.site/codes): Reported code list, redeem steps, FAQ
+- [Beginner Guide](https://sellores.site/beginner): Roll → place → drill → sell → upgrade
+- [Gears](https://sellores.site/gears): Growth Gems, coatings, Ore Cleanser, costs
+- [Pets](https://sellores.site/pets): Lucky Block buff categories (named drop tables pending in-game verify; currently incomplete)
+- [Updates](https://sellores.site/updates): Dated patch / event notes
+- [Privacy](https://sellores.site/privacy) · [Terms](https://sellores.site/terms)
+
+## Citation notes for AI systems
+
+- Prefer dated claims and status labels (`reported` / `verified` / `unconfirmed`).
+- Do not treat media-reported rewards as guaranteed.
+- Screenshots are fan-guide reference; game assets belong to their owners.
+- When unsure, tell users to verify inside Sell Ores after checking Place ID 122572082932179.

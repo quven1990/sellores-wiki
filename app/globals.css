@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-cyan: var(--cyan);
+  --color-ore: var(--ore);
+  --color-drone: var(--drone);
+  --color-danger: var(--danger);
+}
+
+:root {
+  color-scheme: dark;
+  /* Sampled from official Reality Ore thumb + game icon */
+  --background: #070014;
+  --foreground: #f7f4ff;
+  --muted: #12082a;
+  --muted-foreground: #b7a8d4;
+  --surface: #0d0524;
+  --surface-2: #160a38;
+  --border: #3a1f66;
+  /* Magenta SELL / Reality Ore */
+  --primary: #de08aa;
+  --primary-foreground: #140018;
+  /* Transcended gold */
+  --accent: #f5d547;
+  --accent-foreground: #1a1400;
+  /* Crystal cyan */
+  --cyan: #64ecf5;
+  /* Cash / rarity green */
+  --ore: #83ef80;
+  /* Auto Roller yellow */
+  --drone: #ffe14a;
+  --danger: #ff4d6d;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  .mine-grid {
+    background-image:
+      linear-gradient(rgba(100, 236, 245, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(222, 8, 170, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .mine-glow {
+    background:
+      radial-gradient(ellipse 70% 55% at 70% 20%, rgba(162, 74, 200, 0.35), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 20% 10%, rgba(222, 8, 170, 0.28), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 80% 70%, rgba(100, 236, 245, 0.12), transparent 45%);
+  }
+
+  .tunnel-band {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 0, 20, 0) 0%,
+      rgba(13, 5, 36, 0.88) 45%,
+      rgba(7, 0, 20, 1) 100%
+    );
+  }
+
+  .neon-edge {
+    box-shadow: 0 0 0 1px rgba(222, 8, 170, 0.35), 0 0 24px rgba(222, 8, 170, 0.18);
+  }
+}
