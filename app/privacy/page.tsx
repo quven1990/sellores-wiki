@@ -21,13 +21,36 @@ export default function PrivacyPage() {
             data.
           </p>
           <p>
-            The current static build does not set analytics or advertising cookies, and does not
-            collect Roblox account data. Hosting providers may process standard server logs (IP,
-            user agent, request path) to operate the site.
+            We use Google Analytics 4 (measurement ID <span className="font-mono">G-GGQY9W5MCT</span>)
+            to understand aggregate traffic and which pages are useful. Google may set cookies or use
+            similar identifiers and process data such as page views, approximate location, device/browser
+            type, and referral source under{" "}
+            <a
+              className="text-primary underline-offset-2 hover:underline"
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Google’s Privacy Policy
+            </a>
+            .
           </p>
           <p>
-            If privacy-friendly analytics are added later, this page will be updated before they
-            go live.
+            We do not require accounts, we do not sell personal data, and we do not collect Roblox
+            account credentials. Hosting providers may also process standard server logs (IP, user
+            agent, request path) to operate the site.
+          </p>
+          <p>
+            You can limit analytics via browser controls, extensions, or Google’s{" "}
+            <a
+              className="text-primary underline-offset-2 hover:underline"
+              href="https://tools.google.com/dlpage/gaoptout"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Analytics opt-out
+            </a>{" "}
+            tools where available.
           </p>
           <p>
             Privacy questions:{" "}

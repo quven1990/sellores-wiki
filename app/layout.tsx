@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { DM_Sans, Syne } from "next/font/google"
 
+import { GoogleAnalytics } from "@/components/google-analytics"
 import { SiteShell } from "@/components/site-shell"
 import { DEFAULT_OG_IMAGE, SEO_PAGES } from "@/lib/seo"
 import { getSiteUrl, SITE_NAME } from "@/lib/site"
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <body className="font-sans antialiased">
+        <GoogleAnalytics />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

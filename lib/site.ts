@@ -17,3 +17,5 @@ export const CONTENT_AS_OF = "2026-09-07"
 export const CONTENT_MONTH = "September 2026"
 export const CONTACT_EMAIL = "contact@sellores.site"
 export const PRIVACY_EMAIL = "privacy@sellores.site"
+/** Google Analytics 4 measurement ID */
+export const GA_MEASUREMENT_ID = "G-GGQY9W5MCT"
