@@ -16,7 +16,9 @@ Date: 2026-09-08
   - Beginner → AFK & Money
   - Pets → Floors & Fusion
 - Changed sitemap `lastmod` to a per-route explicit map. Dates change only after a material
-  content update.
+  content update; missing route dates now fail type-checking instead of silently falling back.
+- Added a real `Affordable only` Gear filter, enabled after entering a valid wallet amount.
+- Migrated the removed Next.js `next lint` command to ESLint CLI and added a `typecheck` script.
 
 ## Confirmed without code changes
 

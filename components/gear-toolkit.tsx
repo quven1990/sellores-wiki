@@ -34,10 +34,11 @@ export function GearToolkit({ gears }: { gears: GearEntry[] }) {
   const [kind, setKind] = useState<KindFilter>("all")
   const [sort, setSort] = useState<SortMode>("price-asc")
   const [walletRaw, setWalletRaw] = useState("")
+  const [affordableOnly, setAffordableOnly] = useState(false)
 
   const wallet = parseWallet(walletRaw)
 
-  const visible = useMemo(() => {
+  const filteredByKind = useMemo(() => {
     const rows = kind === "all" ? [...gears] : gears.filter((g) => g.kind === kind)
     rows.sort((a, b) => {
       if (sort === "name") return a.name.localeCompare(b.name)
@@ -47,10 +48,15 @@ export function GearToolkit({ gears }: { gears: GearEntry[] }) {
     return rows
   }, [gears, kind, sort])
 
+  const visible =
+    affordableOnly && wallet !== null
+      ? filteredByKind.filter((gear) => gear.costValue <= wallet)
+      : filteredByKind
+
   const nextTarget =
     wallet === null
       ? null
-      : visible
+      : filteredByKind
           .filter((g) => g.costValue > wallet)
           .sort((a, b) => a.costValue - b.costValue)[0] ?? null
 
@@ -86,10 +92,22 @@ export function GearToolkit({ gears }: { gears: GearEntry[] }) {
           I have (optional)
           <input
             value={walletRaw}
-            onChange={(e) => setWalletRaw(e.target.value)}
+            onChange={(e) => {
+              setWalletRaw(e.target.value)
+              if (parseWallet(e.target.value) === null) setAffordableOnly(false)
+            }}
             placeholder="e.g. 50M or 1000000000"
             className="rounded-md border border-border bg-surface-2 px-3 py-2 text-sm text-foreground"
           />
+        </label>
+        <label className="flex min-h-10 items-center gap-2 rounded-md border border-border px-3 py-2 text-xs text-muted-foreground">
+          <input
+            type="checkbox"
+            checked={affordableOnly}
+            disabled={wallet === null}
+            onChange={(e) => setAffordableOnly(e.target.checked)}
+          />
+          Affordable only
         </label>
       </div>
 
@@ -154,6 +172,9 @@ export function GearToolkit({ gears }: { gears: GearEntry[] }) {
           </tbody>
         </table>
       </div>
+      {visible.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No gear matches these filters.</p>
+      ) : null}
     </div>
   )
 }
