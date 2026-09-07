@@ -22,7 +22,7 @@ Last updated: 2026-09-07
 - [Codes](https://sellores.site/codes): Code list, redeem steps, FAQ
 - [Beginner Guide](https://sellores.site/beginner): First 5 / 30 minutes and bottleneck upgrades
 - [Gears](https://sellores.site/gears): Growth Gems, coatings, Ore Cleanser, costs
-- [Pets](https://sellores.site/pets): Lucky Block buff categories and fusion basics (named roster incomplete; currently noindex)
+- [Pets](https://sellores.site/pets): Searchable 50-pet documented roster (single-source community guide; 50-vs-51 conflict noted) + fusion basics
 - [Updates](https://sellores.site/updates): Newest-first patch / event notes
 - [Privacy](https://sellores.site/privacy) · [Terms](https://sellores.site/terms)
 

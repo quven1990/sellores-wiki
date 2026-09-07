@@ -88,7 +88,7 @@ export default function HomePage() {
           <TextLink href="/codes" title="Codes" blurb="Copy-ready list with Cross-source / Conflicted status." />
           <TextLink href="/beginner" title="Beginner route" blurb="First 5 minutes, first 30 minutes, upgrade decisions." />
           <TextLink href="/gears" title="Gears" blurb="Growth Gems, coatings, costs, and buy timing." />
-          <TextLink href="/pets" title="Pets & fusion" blurb="Lucky Blocks, buff types, and fusion basics (roster incomplete)." />
+          <TextLink href="/pets" title="Pets & fusion" blurb="Searchable 50-pet roster with boosts + fusion basics." />
           <TextLink href="/updates" title="Updates" blurb="Newest-first patch notes with player impact." />
         </div>
       </Section>

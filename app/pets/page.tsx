@@ -3,8 +3,10 @@ import Link from "next/link"
 import { GAME_SHOTS } from "@/components/game-shot"
 import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
+import { PetRoster } from "@/components/pet-roster"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
 import { PET_BUFF_CATEGORIES, PET_SYSTEM } from "@/lib/pets"
+import { PET_ROSTER_META } from "@/lib/pets-roster"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
 
 export const metadata = createPageMetadata(SEO_PAGES.pets)
@@ -16,19 +18,38 @@ export default function PetsPage() {
       <PageHero
         eyebrow="Lucky Blocks · Fusion"
         title="Sell Ores Pets"
-        description="Understand how pets fit the economy: Lucky Blocks, buff types, fusion, and when to spend. Named roster tables stay incomplete until sourced."
+        description={`Searchable roster of ${PET_ROSTER_META.documentedCount} documented pets with tier, money boost, and abilities — plus fusion and spending tips.`}
         imageSrc={GAME_SHOTS.drones.src}
         imageAlt={GAME_SHOTS.drones.alt}
       />
 
       <Section>
-        <Callout>{PET_SYSTEM.dataGap}</Callout>
+        <Callout>
+          Source status: <strong>single-source</strong> community Pet Guide (captured via{" "}
+          <a
+            href={PET_ROSTER_META.sourceUrl}
+            className="underline hover:text-primary"
+            target="_blank"
+            rel="noreferrer"
+          >
+            sellores.com/pets
+          </a>
+          , checked {PET_ROSTER_META.checkedAt}). Owner posts have cited{" "}
+          {PET_ROSTER_META.ownerAnnouncedCount} unique pets while this guide lists{" "}
+          {PET_ROSTER_META.documentedCount} — we keep that conflict visible. Spot-check in-game before
+          spending.
+        </Callout>
+      </Section>
+
+      <Section title="Documented roster">
+        <PetRoster />
       </Section>
 
       <Section title="How pets work">
         <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
           <p>{PET_SYSTEM.howYouGetPets}</p>
           <p>{PET_SYSTEM.fusion}</p>
+          <p>{PET_SYSTEM.floorScope}</p>
         </div>
       </Section>
 
@@ -55,14 +76,15 @@ export default function PetsPage() {
           <Link href="/gears" className="text-primary hover:underline">
             gears
           </Link>{" "}
-          for timing.
+          for timing. We do not publish a “best pet” ranking until the roster conflict and live
+          balance are checked.
         </p>
       </Section>
 
       <NextUsefulStep
         links={[
           { href: "/beginner", title: "Beginner route", blurb: "When pets fit into the first hour." },
-          { href: "/gears", title: "Gears", blurb: "Compare gems/coatings vs pet spending." },
+          { href: "/gears", title: "Gears", blurb: "Compare pet buffs vs gem/coating spend." },
           { href: "/codes", title: "Codes", blurb: "Redeem Growth Gem codes before buying blocks." },
         ]}
       />

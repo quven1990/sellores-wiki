@@ -40,9 +40,11 @@ export const PET_BUFF_CATEGORIES: BuffCategory[] = [
 
 export const PET_SYSTEM = {
   howYouGetPets:
-    "Pets come from Pet Shop Lucky Blocks near the market. Spend early cash on slots and bottleneck upgrades before premium blocks.",
+    "Pets come from Pet Shop Lucky Blocks near the market. The community guide documents ten block tiers with five slot weights (50% / 25% / 15% / 8% / 2%). Confirm live shop prices in-game before spending.",
   fusion:
     "Identical pets can fuse. Confirm the exact fusion UI and outcomes in-game before trusting any roster screenshot.",
+  floorScope:
+    "Strategy note from the same guide: most passive abilities and money boosts apply on the floor where the pet sits. Named exceptions such as Qilin luck and Dragon furnace bonuses may work more broadly — test one change at a time.",
   dataGap:
-    "Named pet roster and drop-rate tables are still incomplete on this wiki. We publish system guidance first rather than inventing names, odds, or a fake “all pets” list.",
+    "Roster values below are single-source (community FAQ guide). They are not treated as owner API data or in-game checked by this wiki.",
 } as const

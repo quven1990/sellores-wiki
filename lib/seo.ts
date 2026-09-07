@@ -35,8 +35,7 @@ export const SEO_PAGES = {
     path: "/pets",
     title: "Sell Ores Pets (Sep 2026) – Pet Buffs, Lucky Blocks & Fusion",
     description:
-      "Sell Ores pet guide covering Lucky Blocks, buff categories, fusion basics, and early spending tips. Named roster stays incomplete until sourced.",
-    noindex: true,
+      "Search Sell Ores pets by name or ability: 50 documented entries with tier, money boost, and abilities, plus fusion tips. Source status shown; 50-vs-51 conflict noted.",
   },
   gears: {
     path: "/gears",
