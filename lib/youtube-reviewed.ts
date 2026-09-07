@@ -81,6 +81,17 @@ export const REVIEWED_YOUTUBE_VIDEOS: ReviewedYoutubeVideo[] = [
     reviewedAt: "2026-09-07",
     sourceNote: "oEmbed validated",
   },
+  {
+    id: "updates-floor7-fusion",
+    page: "/updates",
+    videoId: "o7xdLuqZdX0",
+    url: "https://www.youtube.com/watch?v=o7xdLuqZdX0",
+    title: "ALL CODES & FLOOR 7 FUSION UPDATE! | Sell Ores ROBLOX (September 1, 2026)",
+    creator: "Berlian kecil",
+    purpose: "Update-specific footage for the Floor 7 fusion changelog entry.",
+    reviewedAt: "2026-09-07",
+    sourceNote: "oEmbed validated",
+  },
 ]
 
 export function videosForPage(page: string): ReviewedYoutubeVideo[] {

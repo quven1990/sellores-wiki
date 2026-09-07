@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
 import { UpdatesList } from "@/components/updates-list"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
+import { YouTubeLite } from "@/components/youtube-lite"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
 import { UPDATES } from "@/lib/updates"
 
@@ -34,6 +35,12 @@ export default function UpdatesPage() {
       <Section title="Changelog">
         <UpdatesList updates={UPDATES} />
       </Section>
+
+      <YouTubeLite
+        page="/updates"
+        heading="Watch the Floor 7 fusion update"
+        supporting="Update-specific footage appears after the written changelog."
+      />
 
       <NextUsefulStep
         links={[

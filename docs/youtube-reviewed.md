@@ -12,3 +12,4 @@ Validated 2026-09-07 via YouTube oEmbed. Click-to-load only (`components/youtube
 | `/gears` | DQ3g_gQBGr8 | OverGrid |
 | `/upgrades` | gbeHeJL_MzE | Volc |
 | `/floors` | o7xdLuqZdX0 | Berlian kecil |
+| `/updates` | o7xdLuqZdX0 | Berlian kecil |
