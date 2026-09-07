@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { DM_Sans, Syne } from "next/font/google"
+import localFont from "next/font/local"
 
 import { GoogleAnalytics } from "@/components/google-analytics"
 import { MicrosoftClarity } from "@/components/microsoft-clarity"
@@ -9,14 +9,16 @@ import { DEFAULT_OG_IMAGE, SEO_PAGES } from "@/lib/seo"
 import { getSiteUrl, SITE_NAME } from "@/lib/site"
 import "./globals.css"
 
-const syne = Syne({
-  subsets: ["latin"],
+const syne = localFont({
+  src: "./fonts/syne-latin.woff2",
+  weight: "400 800",
   variable: "--font-syne",
   display: "swap",
 })
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
+const dmSans = localFont({
+  src: "./fonts/dm-sans-latin.woff2",
+  weight: "400 700",
   variable: "--font-dm-sans",
   display: "swap",
 })
