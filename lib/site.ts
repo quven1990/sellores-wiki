@@ -21,3 +21,6 @@ export const PRIVACY_EMAIL = "privacy@sellores.site"
 export const GA_MEASUREMENT_ID = "G-GGQY9W5MCT"
 /** Microsoft Clarity project ID */
 export const CLARITY_PROJECT_ID = "yenkx7w44e"
+/** Plausible (privacy-friendly page analytics) */
+export const PLAUSIBLE_DOMAIN = "sellores.site"
+export const PLAUSIBLE_SCRIPT_SRC = "https://plausible.shipsolo.io/js/script.js"

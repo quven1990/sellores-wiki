@@ -50,6 +50,12 @@ export default function PrivacyPage() {
             .
           </p>
           <p>
+            We use Plausible Analytics (domain <span className="font-mono">sellores.site</span>,
+            script hosted at <span className="font-mono">plausible.shipsolo.io</span>) for lightweight
+            page-view statistics. Plausible is designed not to use cookies for tracking and focuses on
+            aggregate metrics such as visits and top pages.
+          </p>
+          <p>
             We do not require accounts, we do not sell personal data, and we do not collect Roblox
             account credentials. Hosting providers may also process standard server logs (IP, user
             agent, request path) to operate the site.

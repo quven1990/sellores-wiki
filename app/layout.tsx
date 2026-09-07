@@ -3,6 +3,7 @@ import { DM_Sans, Syne } from "next/font/google"
 
 import { GoogleAnalytics } from "@/components/google-analytics"
 import { MicrosoftClarity } from "@/components/microsoft-clarity"
+import { PlausibleAnalytics } from "@/components/plausible-analytics"
 import { SiteShell } from "@/components/site-shell"
 import { DEFAULT_OG_IMAGE, SEO_PAGES } from "@/lib/seo"
 import { getSiteUrl, SITE_NAME } from "@/lib/site"
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased">
         <GoogleAnalytics />
         <MicrosoftClarity />
+        <PlausibleAnalytics />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
