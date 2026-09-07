@@ -1,13 +1,14 @@
 # Reviewed YouTube videos
 
-Populate `lib/youtube-reviewed.ts` only after a human reviews a specific video.
+Source of truth: `lib/youtube-reviewed.ts`
 
-Rules (from SEO toolkit `08_ENGAGEMENT_TOOLS_AND_YOUTUBE.md`):
+Validated 2026-09-07 via YouTube oEmbed. Click-to-load only (`components/youtube-lite.tsx`), no autoplay.
 
-- No invented video IDs, titles, creators, or view counts
-- No autoplay
-- Click-to-load only (`components/youtube-lite.tsx`)
-- Empty list renders nothing
-- Prefer placing beginner video after the checklist, never above codes table
-
-Current reviewed list: **empty**
+| Page | Video | Creator |
+|------|-------|---------|
+| `/beginner` | PiohhFJaz4w | CHALLS |
+| `/codes` | dvrsqckWC_c | EdgedSwordHD |
+| `/pets` | o7xdLuqZdX0 | Berlian kecil |
+| `/gears` | DQ3g_gQBGr8 | OverGrid |
+| `/upgrades` | gbeHeJL_MzE | Volc |
+| `/floors` | o7xdLuqZdX0 | Berlian kecil |

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
+import { YouTubeLite } from "@/components/youtube-lite"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
 import { FLOOR_SOURCE, FLOORS } from "@/lib/floors"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
@@ -73,6 +74,12 @@ export default function FloorsPage() {
           <li>Floor 7 Fuser needs five matching ores — don’t rush if you can’t feed it.</li>
         </ul>
       </Section>
+
+      <YouTubeLite
+        page="/floors"
+        heading="See Floor 7 / fusion in-game"
+        supporting="Footage of the Floor 7 fusion update after the unlock table."
+      />
 
       <NextUsefulStep
         links={[

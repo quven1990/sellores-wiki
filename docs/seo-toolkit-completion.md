@@ -18,7 +18,7 @@ Toolkit: `docs/seo-toolkit/` (= Downloads `sellores_cursor_seo_toolkit`).
 | P1-002 Next-step links | DONE | |
 | P1-003 Gears toolkit | DONE | |
 | P1-004 Engagement tools | DONE | |
-| P1-005 YouTube modules | DONE scaffold | Component + empty reviewed list; **IDs need human review** |
+| P1-005 YouTube modules | DONE | oEmbed-validated embeds on beginner/codes/pets/gears/upgrades/floors |
 | P2-001 `/ores` | DONE | Single-source; blanks preserved |
 | P2-002 `/mutations` | DONE | Cross-source multipliers |
 | P2-003 `/upgrades` | DONE | Strategy labeled |
@@ -37,5 +37,5 @@ Toolkit: `docs/seo-toolkit/` (= Downloads `sellores_cursor_seo_toolkit`).
 1. Claim `sc-domain:sellores.site` (or URL prefix) in Google Search Console → submit `https://sellores.site/sitemap.xml` → URL Inspection on `/`, `/codes`, `/ores`, `/pets`, `/gears`, `/beginner`, `/updates`
 2. Cloudflare Dashboard → Redirect Rules: `www.sellores.site` → `https://sellores.site` 301 (Pages `_redirects` host rules currently do not fire)
 3. Optional GEO: AI Crawl Control allow GPTBot/ClaudeBot/Google-Extended if you want crawlers to match `llms.txt`
-4. Paste reviewed YouTube IDs into `lib/youtube-reviewed.ts`
-5. Spot-check ore/floor numbers in-game when you play; promote statuses only with recorded evidence
+4. Spot-check ore/floor numbers in-game when you play; promote statuses only with recorded evidence
+5. Optional: swap YouTube picks in `lib/youtube-reviewed.ts` if a better video appears
