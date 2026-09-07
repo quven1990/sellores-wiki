@@ -1,7 +1,7 @@
 import { JsonLd } from "@/components/json-ld"
 import { PageHero, Section } from "@/components/ui-blocks"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
-import { CONTENT_AS_OF, SITE_NAME } from "@/lib/site"
+import { CONTENT_AS_OF, PRIVACY_EMAIL, SITE_NAME } from "@/lib/site"
 
 export const metadata = createPageMetadata(SEO_PAGES.privacy)
 
@@ -27,7 +27,14 @@ export default function PrivacyPage() {
           </p>
           <p>
             If privacy-friendly analytics are added later, this page will be updated before they
-            go live. Contact details will be listed here once a public email is chosen.
+            go live.
+          </p>
+          <p>
+            Privacy questions:{" "}
+            <a className="text-primary underline-offset-2 hover:underline" href={`mailto:${PRIVACY_EMAIL}`}>
+              {PRIVACY_EMAIL}
+            </a>
+            .
           </p>
         </div>
       </Section>

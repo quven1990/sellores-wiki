@@ -1,7 +1,7 @@
 import { JsonLd } from "@/components/json-ld"
 import { PageHero, Section } from "@/components/ui-blocks"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
-import { CREATOR_GROUP, SITE_NAME } from "@/lib/site"
+import { CONTACT_EMAIL, CREATOR_GROUP, SITE_NAME } from "@/lib/site"
 
 export const metadata = createPageMetadata(SEO_PAGES.terms)
 
@@ -25,7 +25,15 @@ export default function TermsPage() {
           </p>
           <p>
             Roblox® is a registered trademark of Roblox Corporation. All game assets and names
-            belong to their respective owners.
+            belong to their respective owners. Screenshots on this site are for fan-guide
+            reference only.
+          </p>
+          <p>
+            Questions:{" "}
+            <a className="text-primary underline-offset-2 hover:underline" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL}
+            </a>
+            .
           </p>
         </div>
       </Section>
