@@ -2,8 +2,9 @@ import Link from "next/link"
 
 import { GAME_SHOTS } from "@/components/game-shot"
 import { JsonLd } from "@/components/json-ld"
+import { NextUsefulStep } from "@/components/next-useful-step"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
-import { PET_BUFF_CATEGORIES, PET_NOTES } from "@/lib/pets"
+import { PET_BUFF_CATEGORIES, PET_SYSTEM } from "@/lib/pets"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
 
 export const metadata = createPageMetadata(SEO_PAGES.pets)
@@ -13,18 +14,22 @@ export default function PetsPage() {
     <>
       <JsonLd page={SEO_PAGES.pets} />
       <PageHero
-        eyebrow="Lucky Blocks"
+        eyebrow="Lucky Blocks · Fusion"
         title="Sell Ores Pets"
-        description="Pets come from Pet Shop Lucky Blocks near the market. Buffs stack into your drill/roll economy — fusion matters once you start pulling duplicates."
+        description="Understand how pets fit the economy: Lucky Blocks, buff types, fusion, and when to spend. Named roster tables stay incomplete until sourced."
         imageSrc={GAME_SHOTS.drones.src}
         imageAlt={GAME_SHOTS.drones.alt}
       />
 
       <Section>
-        <Callout>
-          Named pet + drop-rate tables are intentionally skeleton until an in-game pass fills them.
-          Do not treat media screenshots as final odds.
-        </Callout>
+        <Callout>{PET_SYSTEM.dataGap}</Callout>
+      </Section>
+
+      <Section title="How pets work">
+        <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+          <p>{PET_SYSTEM.howYouGetPets}</p>
+          <p>{PET_SYSTEM.fusion}</p>
+        </div>
       </Section>
 
       <Section title="Buff categories">
@@ -33,22 +38,16 @@ export default function PetsPage() {
             <article key={cat.id} className="rounded-xl border border-border bg-surface p-5">
               <h3 className="font-display text-lg font-semibold text-primary">{cat.label}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{cat.summary}</p>
-              <p className="mt-3 text-xs uppercase tracking-wide text-accent">Verified in-game: no</p>
+              <p className="mt-3 text-xs leading-relaxed text-accent">{cat.strategyTip}</p>
             </article>
           ))}
         </div>
       </Section>
 
-      <Section title="What we know so far">
-        <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-          {PET_NOTES.map((note) => (
-            <li key={note} className="border-l-2 border-primary/50 pl-4">
-              {note}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-6 text-sm text-muted-foreground">
-          Early cash is usually better on upgrades and slots than premium Lucky Blocks. See the{" "}
+      <Section title="Early spending tip">
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          Strategy: early cash is usually better on upgrades and slots than premium Lucky Blocks.
+          See the{" "}
           <Link href="/beginner" className="text-primary hover:underline">
             beginner guide
           </Link>{" "}
@@ -59,6 +58,14 @@ export default function PetsPage() {
           for timing.
         </p>
       </Section>
+
+      <NextUsefulStep
+        links={[
+          { href: "/beginner", title: "Beginner route", blurb: "When pets fit into the first hour." },
+          { href: "/gears", title: "Gears", blurb: "Compare gems/coatings vs pet spending." },
+          { href: "/codes", title: "Codes", blurb: "Redeem Growth Gem codes before buying blocks." },
+        ]}
+      />
     </>
   )
 }

@@ -27,7 +27,8 @@ export function SiteFooter() {
         </div>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} {SITE_NAME}. Content as of {CONTENT_AS_OF}. Tables marked
-          reported/unverified need in-game checks before you treat rewards as final.
+          Cross-source / Needs check still need in-game confirmation before you treat rewards as
+          final.
         </p>
       </div>
     </footer>

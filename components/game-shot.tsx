@@ -27,15 +27,15 @@ export function GameShot({
 export const GAME_SHOTS = {
   realityOre: {
     src: "/brand/game/reality-ore-panel.png",
-    alt: "Sell Ores Reality Ore sell panel in-game",
+    alt: "Sell Ores in-game sell station and ore panel",
   },
   coalVsCrystalite: {
     src: "/brand/game/coal-vs-crystalite.png",
-    alt: "Sell Ores coal versus Crystalite drone mining comparison",
+    alt: "Coal and Crystalite ores being mined by Sell Ores drones",
   },
   sellStation: {
     src: "/brand/game/sell-station.png",
-    alt: "Sell Ores sell station with (E) SELL prompt",
+    alt: "Sell Ores sell station with the sell prompt",
   },
   drones: {
     src: "/brand/game/drones-mining.png",

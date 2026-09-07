@@ -17,55 +17,56 @@ export const DEFAULT_OG_IMAGE = {
   alt: "Sell Ores Wiki — Roblox codes, pets, gears, and beginner guide",
 } as const
 
+/** Titles/descriptions follow docs/seo-toolkit/02_PAGE_SPECS.md fallbacks (no /ores yet). */
 export const SEO_PAGES = {
   home: {
     path: "/",
-    title: "Sell Ores Wiki - Codes, Pets, Gears & Guide",
+    title: "Sell Ores Wiki (Sep 2026) – Codes, Pets, Gears & Beginner Guide",
     description:
-      "Reported Sell Ores codes with sources, pet Lucky Block basics, Growth Gems & coatings, plus the roll → drill → sell beginner loop. Place ID 122572082932179.",
+      "Sell Ores Wiki for Roblox with code status, gear prices, pet and fusion help, beginner progression tips, updates, and source notes. Updated September 2026.",
   },
   codes: {
     path: "/codes",
-    title: "Sell Ores Codes (Sep 2026) - List & Redeem",
+    title: "Sell Ores Codes (September 2026) – Working Codes & Rewards",
     description:
-      "Reported Sell Ores codes for cash, time skips, and Growth Gems. Copy list with status, sources, and in-game redeem steps. Verify Place ID first.",
+      "Copy the latest Sell Ores codes for Time Skips, Cash, Growth Gems and Admin rewards. See active, conflicted and expired status plus exact redeem steps.",
   },
   pets: {
     path: "/pets",
-    title: "Sell Ores Pets - Lucky Blocks & Buff Types",
+    title: "Sell Ores Pets (Sep 2026) – Pet Buffs, Lucky Blocks & Fusion",
     description:
-      "How Sell Ores pets work via Pet Shop Lucky Blocks: yield, drill, luck, mutation, and instant-grow buff categories. Named tables coming after in-game verify.",
+      "Sell Ores pet guide covering Lucky Blocks, buff categories, fusion basics, and early spending tips. Named roster stays incomplete until sourced.",
     noindex: true,
   },
   gears: {
     path: "/gears",
-    title: "Sell Ores Gears - Gems, Coatings & Costs",
+    title: "Sell Ores Gears (Sep 2026) – Prices, Effects & Best Buy Order",
     description:
-      "Sell Ores Gear Shop list: Growth Gem timers, coating multipliers, Ore Cleanser, costs, and when each boost is worth buying. Spot-check in-game.",
+      "Compare Sell Ores Growth Gems, Coatings and the Ore Cleanser by price and effect, then see which gear to buy first for early and late progression.",
   },
   beginner: {
     path: "/beginner",
-    title: "Sell Ores Beginner Guide - Roll, Drill, Sell",
+    title: "Sell Ores Beginner Guide – Best Upgrade Order & Fast Progression",
     description:
-      "Learn the Sell Ores core loop on Roblox: roll an ore, place it, let drones crate it, sell at the station, then upgrade the real bottleneck.",
+      "Start Sell Ores the right way: redeem codes, fill your base, keep drones working, choose the next upgrade, avoid early traps, and progress faster.",
   },
   updates: {
     path: "/updates",
-    title: "Sell Ores Updates - Patches & Code Drops",
+    title: "Sell Ores Updates (Sep 2026) – New Codes, Patches & Events",
     description:
-      "Dated Sell Ores content updates, Floor/Fusion notes, Admin Abuse caveats, and code-drop tracking so wiki tables stay honest.",
+      "Track Sell Ores updates, code drops, Floor 7 and fusion changes, balance patches and events, with links to the guides affected by each change.",
   },
   privacy: {
     path: "/privacy",
-    title: "Privacy Policy - Sell Ores Wiki",
+    title: "Privacy Policy – Sell Ores Wiki",
     description:
-      "How Sell Ores Wiki handles visitor data. No accounts required. Current build has no analytics cookies.",
+      "How Sell Ores Wiki handles visitor data. No accounts required. Current build has no analytics cookies. Contact privacy@sellores.site.",
   },
   terms: {
     path: "/terms",
-    title: "Terms of Use - Sell Ores Wiki",
+    title: "Terms of Use – Sell Ores Wiki",
     description:
-      "Terms for the unofficial Sell Ores Roblox fan wiki. Not affiliated with Roblox or The Ore Drillers.",
+      "Terms for the unofficial Sell Ores Roblox fan wiki. Not affiliated with Roblox or The Ore Drillers. Contact contact@sellores.site.",
   },
 } as const satisfies Record<string, SeoPage>
 

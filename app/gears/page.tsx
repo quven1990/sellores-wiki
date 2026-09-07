@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { GAME_SHOTS, GameShot } from "@/components/game-shot"
 import { JsonLd } from "@/components/json-ld"
+import { NextUsefulStep } from "@/components/next-useful-step"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
 import { GEARS } from "@/lib/gears"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
@@ -20,8 +21,8 @@ export default function GearsPage() {
       <JsonLd page={SEO_PAGES.gears} />
       <PageHero
         eyebrow="Gear Shop"
-        title="Sell Ores Gears"
-        description="Gears are single-use. Growth Gems burst regen for a timer; Coatings permanently mutate one ore’s value until cleansed."
+        title="Sell Ores Gears: Prices, Effects & Buy Order"
+        description="Compare Growth Gems, Coatings and Ore Cleanser by price and effect. Strategy tips below are labeled separately from table facts."
         imageSrc={GAME_SHOTS.coalVsCrystalite.src}
         imageAlt={GAME_SHOTS.coalVsCrystalite.alt}
       />
@@ -58,7 +59,7 @@ export default function GearsPage() {
               </div>
               <p className="mt-2 text-sm text-muted-foreground">{gear.effect}</p>
               <p className="mt-2 text-xs uppercase tracking-wide text-accent">
-                Verified: {gear.verifiedInGame ? "yes" : "no"}
+                {gear.verifiedInGame ? "In-game checked" : "Needs check"}
               </p>
             </li>
           ))}
@@ -83,7 +84,7 @@ export default function GearsPage() {
                   <td className="px-4 py-3 font-mono text-primary">{gear.cost}</td>
                   <td className="px-4 py-3 text-muted-foreground">{gear.effect}</td>
                   <td className="px-4 py-3 text-xs uppercase tracking-wide text-accent">
-                    {gear.verifiedInGame ? "yes" : "no"}
+                    {gear.verifiedInGame ? "In-game checked" : "Needs check"}
                   </td>
                 </tr>
               ))}
@@ -108,6 +109,31 @@ export default function GearsPage() {
           </li>
         </ul>
       </Section>
+
+      <Section title="Buy-order strategy">
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li>
+            <strong className="text-foreground">Best early buy (strategy):</strong> cheapest Growth
+            Gem that removes a real idle timer once slots stay filled.
+          </li>
+          <li>
+            <strong className="text-foreground">Mid-game (strategy):</strong> coatings on higher-tier
+            ores after drones stay busy.
+          </li>
+          <li>
+            <strong className="text-foreground">When to cleanse (strategy):</strong> only if a weak
+            coating is blocking a clearly better one.
+          </li>
+        </ul>
+      </Section>
+
+      <NextUsefulStep
+        links={[
+          { href: "/beginner", title: "Beginner route", blurb: "Confirm the bottleneck before spending." },
+          { href: "/codes", title: "Codes", blurb: "Redeem gem / skip codes first." },
+          { href: "/pets", title: "Pets", blurb: "Compare pet buffs vs gear spend." },
+        ]}
+      />
     </>
   )
 }

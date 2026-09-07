@@ -95,7 +95,7 @@ function codesFaq() {
         name: "Where do new Sell Ores codes appear?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "New codes usually appear first in the official Discord codes channel. This wiki updates after we re-check in-game. Status stays Reported until verified.",
+          text: "New codes usually appear first in the official Discord codes channel. This wiki updates after re-checks. Status stays Cross-source until an in-game redeem is recorded.",
         },
       },
       {
@@ -114,7 +114,7 @@ function redeemHowTo() {
   return {
     "@type": "HowTo",
     name: "How to redeem Sell Ores codes",
-    description: "Redeem reported Sell Ores codes in Settings after confirming Place ID.",
+    description: "Redeem Sell Ores codes in Settings after confirming Place ID.",
     totalTime: "PT2M",
     step: [
       {

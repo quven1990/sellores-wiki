@@ -1,0 +1,175 @@
+{
+  "site": "https://sellores.site/",
+  "audit_date": "2026-09-07",
+  "tasks": [
+    {
+      "id": "P0-000",
+      "priority": "P0",
+      "title": "Enforce source-backed content policy before factual edits or new pages",
+      "owner": "cursor",
+      "risk": "critical",
+      "source": "07_CONTENT_EVIDENCE_POLICY.md",
+      "acceptance": [
+        "No model-memory or guessed Sell Ores facts are used",
+        "Unsupported values are omitted/unverified rather than invented",
+        "New SEO pages remain unbuilt when reliable content is insufficient",
+        "Substantial new factual datasets have traceable provenance"
+      ]
+    },
+    {
+      "id": "P0-001",
+      "priority": "P0",
+      "title": "Verify robots, sitemap, canonical and indexability",
+      "owner": "cursor",
+      "risk": "low",
+      "acceptance": [
+        "Public pages are crawlable",
+        "Canonical host is https://sellores.site",
+        "No staging URLs or accidental noindex",
+        "Sitemap contains intended indexable URLs"
+      ]
+    },
+    {
+      "id": "P0-002",
+      "priority": "P0",
+      "title": "Rewrite metadata for six existing content routes",
+      "owner": "cursor",
+      "risk": "low",
+      "source": "02_PAGE_SPECS.md"
+    },
+    {
+      "id": "P0-003",
+      "priority": "P0",
+      "title": "Reorder homepage first screen around player tasks",
+      "owner": "cursor",
+      "risk": "low",
+      "acceptance": [
+        "Useful task CTA appears before long verification caveats",
+        "Freshness/source status remains visible",
+        "Play on Roblox is secondary to on-site tasks"
+      ]
+    },
+    {
+      "id": "P0-004",
+      "priority": "P0",
+      "title": "Refactor Sell Ores code status model",
+      "owner": "cursor+manual-data-review",
+      "risk": "medium",
+      "acceptance": [
+        "Supports in-game, cross-source, conflicted, expired, needs-check",
+        "No false in-game claims",
+        "FINALE can remain conflicted"
+      ]
+    },
+    {
+      "id": "P0-005",
+      "priority": "P0",
+      "title": "Fix thin Pets presentation",
+      "owner": "cursor",
+      "risk": "medium",
+      "acceptance": [
+        "No placeholder-looking main section",
+        "No fabricated pet roster",
+        "Metadata does not overclaim completeness"
+      ]
+    },
+    {
+      "id": "P0-006",
+      "priority": "P0",
+      "title": "Expand beginner route and remove duplicate text",
+      "owner": "cursor",
+      "risk": "low"
+    },
+    {
+      "id": "P0-007",
+      "priority": "P0",
+      "title": "Make updates newest-first and impact-oriented",
+      "owner": "cursor",
+      "risk": "low"
+    },
+    {
+      "id": "P1-001",
+      "priority": "P1",
+      "title": "Add code copy/redeemed/filter interactions",
+      "owner": "cursor",
+      "risk": "low"
+    },
+    {
+      "id": "P1-002",
+      "priority": "P1",
+      "title": "Add context-aware next-step internal links",
+      "owner": "cursor",
+      "risk": "low"
+    },
+    {
+      "id": "P1-003",
+      "priority": "P1",
+      "title": "Add gear table filter/sort and optional wallet helper",
+      "owner": "cursor",
+      "risk": "low"
+    },
+    {
+      "id": "P2-001",
+      "priority": "P2",
+      "title": "Build /ores when reliable data is available",
+      "owner": "cursor+content",
+      "risk": "medium"
+    },
+    {
+      "id": "P2-002",
+      "priority": "P2",
+      "title": "Build /mutations when reliable data is available",
+      "owner": "cursor+content",
+      "risk": "medium"
+    },
+    {
+      "id": "P2-003",
+      "priority": "P2",
+      "title": "Build upgrades guide",
+      "owner": "cursor+content",
+      "risk": "medium"
+    },
+    {
+      "id": "P3-001",
+      "priority": "P3",
+      "title": "Image, structured-data and Core Web Vitals polish",
+      "owner": "cursor",
+      "risk": "low"
+    },
+    {
+      "id": "MANUAL-001",
+      "priority": "P0",
+      "title": "Verify pages in Google Search Console and submit sitemap",
+      "owner": "user",
+      "risk": "low"
+    },
+    {
+      "id": "P1-004",
+      "priority": "P1",
+      "title": "Implement lightweight engagement tools from the engagement plan",
+      "owner": "cursor",
+      "risk": "low",
+      "source": "08_ENGAGEMENT_TOOLS_AND_YOUTUBE.md",
+      "acceptance": [
+        "Tools help a real user task",
+        "No fabricated data is required",
+        "No sign-in required for local utilities where practical"
+      ]
+    },
+    {
+      "id": "P1-005",
+      "priority": "P1",
+      "title": "Add optional reviewed YouTube modules without hurting page speed",
+      "owner": "cursor+manual-video-review",
+      "risk": "low",
+      "source": "08_ENGAGEMENT_TOOLS_AND_YOUTUBE.md",
+      "acceptance": [
+        "No autoplay",
+        "No invented video metadata or IDs",
+        "Videos only render from reviewed data",
+        "Primary answer appears before video",
+        "Click-to-load/lazy implementation prevents unnecessary third-party cost"
+      ]
+    }
+  ]
+}

@@ -5,29 +5,30 @@
 Site: https://sellores.site  
 Place ID: 122572082932179  
 Universe ID: 10336278580  
+Contact: contact@sellores.site · Privacy: privacy@sellores.site  
 Last updated: 2026-09-07
 
 ## Quick facts
 
 - Sell Ores is an incremental Roblox simulator: roll ores, place them in tunnels, let yellow drones drill crates, then sell for cash.
-- Codes on this site are **reported** from public media until verified in-game. Always confirm Place ID before redeeming.
-- Reported active codes (Sep 2026, verify in-game): ROBLOXSERVERS, ALMIGHTY, SORRYFORDATA, BALANCE, PETFUSION, RELEASE, EXPANSION.
-- Unconfirmed / conflicted (not in Active list): FINALE, ADMINMUTATION, FRAGMENTS, ANOTHERONE, SECRETCODE.
+- Codes on this site use status labels: **Cross-source** (2+ recent public sources agree), **Conflicted**, **Needs check**, **In-game checked** (only after a recorded redeem). Never treat Cross-source as guaranteed.
+- Active Cross-source codes (Sep 2026 media consensus; re-check in-game): ADMINMUTATION, FRAGMENTS, ROBLOXSERVERS, ALMIGHTY, SORRYFORDATA, BALANCE, PETFUSION, EXPANSION, RELEASE.
+- Conflicted / needs-check (not in Active): FINALE, ANOTHERONE, SECRETCODE.
 - Redeem path: Settings (top right) → Codes → paste → Redeem.
 
 ## Primary pages
 
 - [Home](https://sellores.site/): Hub for codes, pets, gears, beginner loop, updates
-- [Codes](https://sellores.site/codes): Reported code list, redeem steps, FAQ
-- [Beginner Guide](https://sellores.site/beginner): Roll → place → drill → sell → upgrade
+- [Codes](https://sellores.site/codes): Code list, redeem steps, FAQ
+- [Beginner Guide](https://sellores.site/beginner): First 5 / 30 minutes and bottleneck upgrades
 - [Gears](https://sellores.site/gears): Growth Gems, coatings, Ore Cleanser, costs
-- [Pets](https://sellores.site/pets): Lucky Block buff categories (named drop tables pending in-game verify; currently incomplete)
-- [Updates](https://sellores.site/updates): Dated patch / event notes
+- [Pets](https://sellores.site/pets): Lucky Block buff categories and fusion basics (named roster incomplete; currently noindex)
+- [Updates](https://sellores.site/updates): Newest-first patch / event notes
 - [Privacy](https://sellores.site/privacy) · [Terms](https://sellores.site/terms)
 
 ## Citation notes for AI systems
 
-- Prefer dated claims and status labels (`reported` / `verified` / `unconfirmed`).
+- Prefer dated claims and status labels (`cross-source` / `in-game` / `conflicted` / `needs-check`).
 - Do not treat media-reported rewards as guaranteed.
 - Screenshots are fan-guide reference; game assets belong to their owners.
 - When unsure, tell users to verify inside Sell Ores after checking Place ID 122572082932179.

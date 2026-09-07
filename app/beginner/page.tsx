@@ -2,46 +2,41 @@ import Link from "next/link"
 
 import { GAME_SHOTS, GameShot } from "@/components/game-shot"
 import { JsonLd } from "@/components/json-ld"
-import { PageHero, Section } from "@/components/ui-blocks"
+import { NextUsefulStep } from "@/components/next-useful-step"
+import { Callout, PageHero, Section } from "@/components/ui-blocks"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
 
 export const metadata = createPageMetadata(SEO_PAGES.beginner)
 
-const STEPS = [
+const LOOP = [
   {
     title: "Roll",
-    body: "Use the Roll Ores pedestal or lever at your base. An ore in your hand does not earn yet.",
+    body: "Use the Roll Ores pedestal or lever. An ore in your hand does not earn yet.",
   },
   {
     title: "Place",
-    body: "Put the ore into an empty tunnel / compartment. Placement starts the automated work.",
+    body: "Put the ore into an empty tunnel / compartment so drones can work it.",
   },
   {
     title: "Drill",
-    body: "Let the yellow drilling drones finish. They produce a box or crate when the cycle completes.",
+    body: "Let yellow drilling drones finish. They produce a crate when the cycle completes.",
     shot: GAME_SHOTS.drones,
-    caption: "In-game: Auto Roller drones targeting Crystalite.",
+    caption: "Auto Roller drones targeting Crystalite.",
   },
   {
     title: "Sell",
-    body: "Carry the crate to the Sell Ores station and press the sell prompt for cash.",
+    body: "Carry the crate to the Sell station and use the sell prompt for cash.",
     shot: GAME_SHOTS.sellStation,
-    caption: "In-game: sell station with (E) SELL.",
-  },
-  {
-    title: "Upgrade the bottleneck",
-    body: "If rolls are slow, raise regen. If drones lag, raise drill speed. If idle, buy slots. Then chase rarer ores — Coal and Crystalite are not the same economy.",
-    shot: GAME_SHOTS.coalVsCrystalite,
-    caption: "In-game: Coal vs Crystalite income gap.",
+    caption: "Sell station with (E) SELL.",
   },
 ]
 
-const PRIORITIES = [
-  "Fill usable slots",
-  "Keep drones busy",
-  "Fix the slowest upgrade board step",
-  "Redeem early codes for cash / skips / small gems",
-  "Delay premium Lucky Blocks until income is stable",
+const CHECKLIST_30 = [
+  "Redeem Cross-source codes (Settings → Codes)",
+  "Fill every usable slot before buying luxury boosts",
+  "Keep drones busy — idle drones mean wasted rolls",
+  "Spend on the slowest step: regen, drill speed, or slots",
+  "Skip premium Lucky Blocks until income feels stable",
 ]
 
 export default function BeginnerPage() {
@@ -49,59 +44,99 @@ export default function BeginnerPage() {
     <>
       <JsonLd page={SEO_PAGES.beginner} />
       <PageHero
-        eyebrow="How to play"
+        eyebrow="First session"
         title="Sell Ores Beginner Guide"
-        description="Sell Ores is an automated ore base, not a pickaxe grinder. If an ore stays in your hand, nothing earns."
+        description="Redeem codes, fill your base, keep drones working, choose the next upgrade, and avoid early traps."
         imageSrc={GAME_SHOTS.sellStation.src}
         imageAlt={GAME_SHOTS.sellStation.alt}
       />
 
+      <Section title="First 5 minutes">
+        <ol className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+          <li>1. Confirm you are on the correct Sell Ores Place ID.</li>
+          <li>
+            2. Redeem codes first — see the{" "}
+            <Link href="/codes" className="text-primary hover:underline">
+              codes list
+            </Link>
+            .
+          </li>
+          <li>3. Roll an ore, place it in a slot, and wait for drones (don’t pocket the ore).</li>
+          <li>4. Sell the first crate so you understand the cash loop.</li>
+        </ol>
+      </Section>
+
       <Section title="Core loop">
         <ol className="space-y-8">
-          {STEPS.map((step, i) => (
+          {LOOP.map((step, i) => (
             <li key={step.title} className="grid gap-4 lg:grid-cols-2 lg:items-center">
               <div className="rounded-xl border border-border bg-surface p-5">
                 <p className="font-mono text-xs text-cyan">Step {i + 1}</p>
                 <h3 className="mt-1 font-display text-xl font-semibold">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
               </div>
-              {step.shot ? (
-                <GameShot {...step.shot} caption={step.caption} />
-              ) : (
-                <div className="hidden rounded-xl border border-dashed border-border bg-muted/40 p-5 text-sm text-muted-foreground lg:flex lg:items-center">
-                  Roll and place happen at your base pedestals — keep ores in slots, not in your hand.
-                </div>
-              )}
+              {step.shot ? <GameShot {...step.shot} caption={step.caption} /> : null}
             </li>
           ))}
         </ol>
       </Section>
 
-      <Section title="Beginner priorities">
-        <ol className="space-y-2 text-sm text-muted-foreground">
-          {PRIORITIES.map((item, i) => (
+      <Section title="Fix the bottleneck">
+        <div className="grid gap-4 lg:grid-cols-2 lg:items-center">
+          <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+            <li>
+              <strong className="text-foreground">Waiting on rolls →</strong> raise regen / roll pace.
+            </li>
+            <li>
+              <strong className="text-foreground">Drones too slow →</strong> raise drill speed.
+            </li>
+            <li>
+              <strong className="text-foreground">Idle capacity →</strong> buy slots / floors when
+              every tunnel is already filled.
+            </li>
+            <li>
+              <strong className="text-foreground">Strategy:</strong> upgrade the slowest step, then
+              chase rarer ores. Coal and Crystalite are not the same economy.
+            </li>
+          </ul>
+          <GameShot
+            {...GAME_SHOTS.coalVsCrystalite}
+            caption="Coal vs Crystalite income gap."
+          />
+        </div>
+      </Section>
+
+      <Section title="What to avoid early">
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li>• Holding ores in hand instead of placing them</li>
+          <li>• Buying premium Lucky Blocks before slots stay full</li>
+          <li>• Spreading cash across every upgrade board at once</li>
+          <li>• Ignoring code rewards that give time skips / small gems</li>
+        </ul>
+      </Section>
+
+      <Section title="First 30-minute checklist">
+        <Callout>
+          Checklist tip: tick these mentally or in a notes app. A localStorage checklist tool can
+          come later — the order below is the useful part.
+        </Callout>
+        <ol className="mt-4 space-y-2 text-sm text-muted-foreground">
+          {CHECKLIST_30.map((item, i) => (
             <li key={item} className="flex gap-3">
               <span className="font-mono text-primary">{i + 1}.</span>
               <span>{item}</span>
             </li>
           ))}
         </ol>
-        <p className="mt-6 text-sm text-muted-foreground">
-          Next:{" "}
-          <Link href="/codes" className="text-primary hover:underline">
-            codes
-          </Link>
-          ,{" "}
-          <Link href="/gears" className="text-primary hover:underline">
-            gears
-          </Link>
-          ,{" "}
-          <Link href="/pets" className="text-primary hover:underline">
-            pets
-          </Link>
-          .
-        </p>
       </Section>
+
+      <NextUsefulStep
+        links={[
+          { href: "/codes", title: "Codes", blurb: "Redeem skips and gems before the grind." },
+          { href: "/gears", title: "Gears", blurb: "See Growth Gem / coating timing." },
+          { href: "/pets", title: "Pets", blurb: "Learn buff types before spending on Lucky Blocks." },
+        ]}
+      />
     </>
   )
 }
