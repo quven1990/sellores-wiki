@@ -1,9 +1,11 @@
 import Link from "next/link"
 
 import { BeginnerChecklist } from "@/components/beginner-checklist"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GAME_SHOTS, GameShot } from "@/components/game-shot"
 import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
+import { YouTubeLite } from "@/components/youtube-lite"
 import { PageHero, Section } from "@/components/ui-blocks"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
 
@@ -36,6 +38,7 @@ export default function BeginnerPage() {
   return (
     <>
       <JsonLd page={SEO_PAGES.beginner} />
+      <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Beginner" }]} />
       <PageHero
         eyebrow="First session"
         title="Sell Ores Beginner Guide"
@@ -72,6 +75,26 @@ export default function BeginnerPage() {
             </li>
           ))}
         </ol>
+      </Section>
+
+      <Section title="Fill slots before expensive boosts">
+        <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+          <li>Empty tunnels earn nothing — fill Floor 1 before chasing rare rolls or Lucky Blocks.</li>
+          <li>
+            Prefer affordable Uncommon keepers (see{" "}
+            <Link href="/ores" className="text-primary hover:underline">
+              ore index
+            </Link>
+            ) over pocketing every roll.
+          </li>
+          <li>
+            Only after slots stay busy should you spend on coatings, high pets, or the next floor (
+            <Link href="/upgrades" className="text-primary hover:underline">
+              upgrades
+            </Link>
+            ).
+          </li>
+        </ul>
       </Section>
 
       <Section title="Fix the bottleneck">
@@ -112,11 +135,18 @@ export default function BeginnerPage() {
         <BeginnerChecklist />
       </Section>
 
+      <YouTubeLite
+        page="/beginner"
+        heading="Watch a Sell Ores beginner walkthrough"
+        supporting="Prefer video? This walkthrough complements the written steps above."
+      />
+
       <NextUsefulStep
         links={[
           { href: "/codes", title: "Codes", blurb: "Redeem skips and gems before the grind." },
+          { href: "/upgrades", title: "Upgrades", blurb: "Bottleneck buy order after the first hour." },
+          { href: "/ores", title: "Ores", blurb: "Know which keepers to place." },
           { href: "/gears", title: "Gears", blurb: "See Growth Gem / coating timing." },
-          { href: "/pets", title: "Pets", blurb: "Learn buff types before spending on Lucky Blocks." },
         ]}
       />
     </>

@@ -1,6 +1,6 @@
 import { ACTIVE_CODES } from "@/lib/codes"
 import type { SeoPage } from "@/lib/seo"
-import { SEO_PAGES } from "@/lib/seo"
+import { PAGE_SHORT_LABEL, SEO_PAGES } from "@/lib/seo"
 import {
   CONTENT_AS_OF,
   CREATOR_GROUP,
@@ -19,7 +19,8 @@ function pageUrl(path: string) {
 function crumbsFor(page: SeoPage) {
   const items = [{ name: "Home", path: "/" }]
   if (page.path !== "/") {
-    items.push({ name: page.title.split(" - ")[0] ?? page.title, path: page.path })
+    const label = PAGE_SHORT_LABEL[page.path] ?? page.title
+    items.push({ name: label, path: page.path })
   }
   return {
     "@type": "BreadcrumbList",

@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react"
 
 import { PET_ROSTER, type PetTier } from "@/lib/pets-roster"
-import { cn } from "@/lib/utils"
 
 const TIERS: Array<"all" | PetTier> = [
   "all",
@@ -19,23 +18,45 @@ const TIERS: Array<"all" | PetTier> = [
   "Transcended",
 ]
 
+const EFFECT_HINTS = [
+  { id: "all", label: "All effects" },
+  { id: "money", label: "Money" },
+  { id: "luck", label: "Luck" },
+  { id: "drill", label: "Drill / speed" },
+  { id: "regen", label: "Regen / grow" },
+  { id: "mutation", label: "Mutation" },
+] as const
+
+function matchesEffect(ability: string, effect: (typeof EFFECT_HINTS)[number]["id"]) {
+  if (effect === "all") return true
+  const a = ability.toLowerCase()
+  if (effect === "money") return a.includes("money") || a.includes("cash") || a.includes("sell")
+  if (effect === "luck") return a.includes("luck")
+  if (effect === "drill") return a.includes("drill") || a.includes("speed") || a.includes("drone")
+  if (effect === "regen") return a.includes("regen") || a.includes("grow") || a.includes("growth")
+  if (effect === "mutation") return a.includes("mutation") || a.includes("coat")
+  return true
+}
+
 export function PetRoster() {
   const [q, setQ] = useState("")
   const [tier, setTier] = useState<"all" | PetTier>("all")
+  const [effect, setEffect] = useState<(typeof EFFECT_HINTS)[number]["id"]>("all")
 
   const visible = useMemo(() => {
     const query = q.trim().toLowerCase()
     return PET_ROSTER.filter((pet) => {
       if (tier !== "all" && pet.tier !== tier) return false
+      if (!matchesEffect(pet.ability, effect)) return false
       if (!query) return true
       const hay = `${pet.name} ${pet.tier} ${pet.ability} ${pet.moneyBoost}`.toLowerCase()
       return hay.includes(query)
     })
-  }, [q, tier])
+  }, [q, tier, effect])
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -50,6 +71,17 @@ export function PetRoster() {
           {TIERS.map((t) => (
             <option key={t} value={t}>
               {t === "all" ? "All tiers" : t}
+            </option>
+          ))}
+        </select>
+        <select
+          value={effect}
+          onChange={(e) => setEffect(e.target.value as (typeof EFFECT_HINTS)[number]["id"])}
+          className="rounded-md border border-border bg-surface-2 px-3 py-2 text-sm text-foreground"
+        >
+          {EFFECT_HINTS.map((e) => (
+            <option key={e.id} value={e.id}>
+              {e.label}
             </option>
           ))}
         </select>
@@ -81,7 +113,7 @@ export function PetRoster() {
             <tr>
               <th className="px-4 py-3 font-medium">Pet</th>
               <th className="px-4 py-3 font-medium">Tier</th>
-              <th className="px-4 py-3 font-medium">Slot</th>
+              <th className="px-4 py-3 font-medium">Chance</th>
               <th className="px-4 py-3 font-medium">Money</th>
               <th className="px-4 py-3 font-medium">Ability</th>
             </tr>
@@ -91,18 +123,14 @@ export function PetRoster() {
               <tr key={pet.name} className="border-b border-border/70 last:border-0">
                 <td className="px-4 py-3 font-medium text-foreground">{pet.name}</td>
                 <td className="px-4 py-3 text-muted-foreground">{pet.tier}</td>
-                <td className="px-4 py-3 font-mono text-cyan">{pet.chance}</td>
-                <td className="px-4 py-3 font-mono text-primary">{pet.moneyBoost}</td>
+                <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{pet.chance}</td>
+                <td className="px-4 py-3 font-mono text-xs text-primary">+{pet.moneyBoost}</td>
                 <td className="px-4 py-3 text-muted-foreground">{pet.ability}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      {visible.length === 0 ? (
-        <p className="text-sm text-muted-foreground">No pets match this search.</p>
-      ) : null}
     </div>
   )
 }

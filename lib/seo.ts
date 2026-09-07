@@ -17,13 +17,13 @@ export const DEFAULT_OG_IMAGE = {
   alt: "Sell Ores Wiki — Roblox codes, pets, gears, and beginner guide",
 } as const
 
-/** Titles/descriptions follow docs/seo-toolkit/02_PAGE_SPECS.md fallbacks (no /ores yet). */
+/** Titles/descriptions follow docs/seo-toolkit/02_PAGE_SPECS.md (+ backlog pages once sourced). */
 export const SEO_PAGES = {
   home: {
     path: "/",
-    title: "Sell Ores Wiki (Sep 2026) – Codes, Pets, Gears & Beginner Guide",
+    title: "Sell Ores Wiki (Sep 2026) – Codes, Ore Values, Pets & Gears",
     description:
-      "Sell Ores Wiki for Roblox with code status, gear prices, pet and fusion help, beginner progression tips, updates, and source notes. Updated September 2026.",
+      "Sell Ores Wiki for Roblox with working code status, gear prices, pet and fusion help, beginner progression tips, updates, and source notes. Updated September 2026.",
   },
   codes: {
     path: "/codes",
@@ -31,17 +31,47 @@ export const SEO_PAGES = {
     description:
       "Copy the latest Sell Ores codes for Time Skips, Cash, Growth Gems and Admin rewards. See active, conflicted and expired status plus exact redeem steps.",
   },
+  ores: {
+    path: "/ores",
+    title: "Sell Ores Ore Values (Sep 2026) – Ores, Rarities & Roll Odds",
+    description:
+      "Browse documented Sell Ores ores by rarity with roll odds, buy prices, and cash figures only where public guides recorded them. Source status shown per dataset.",
+  },
   pets: {
     path: "/pets",
     title: "Sell Ores Pets (Sep 2026) – Pet Buffs, Lucky Blocks & Fusion",
     description:
-      "Search Sell Ores pets by name or ability: 50 documented entries with tier, money boost, and abilities, plus fusion tips. Source status shown; 50-vs-51 conflict noted.",
+      "Sell Ores pet guide covering Lucky Blocks, pet buffs, fusion, and documented pet data with clear source status. Search and filter pets by effect.",
   },
   gears: {
     path: "/gears",
     title: "Sell Ores Gears (Sep 2026) – Prices, Effects & Best Buy Order",
     description:
       "Compare Sell Ores Growth Gems, Coatings and the Ore Cleanser by price and effect, then see which gear to buy first for early and late progression.",
+  },
+  mutations: {
+    path: "/mutations",
+    title: "Sell Ores Mutations – Multipliers, Coatings & Best Uses",
+    description:
+      "Sell Ores mutation ladder from Rusty to Galaxy with coating costs, cleanser notes, and strategy for which ores to stamp first.",
+  },
+  upgrades: {
+    path: "/upgrades",
+    title: "Sell Ores Best Upgrades – Upgrade Order & Progression Guide",
+    description:
+      "Sell Ores upgrade order by bottleneck: regen, drill speed, slots, luck, furnace, and pedestals — strategy labeled separately from sourced mechanics.",
+  },
+  floors: {
+    path: "/floors",
+    title: "Sell Ores Floors & Unlocks – Costs, Furnace & Fuser",
+    description:
+      "Sell Ores floor unlock costs and key systems (Boost Pedestal, Furnace, Floor 7 Fuser) with confidence notes where prices were not on-screen.",
+  },
+  afkMoney: {
+    path: "/guides/afk-money",
+    title: "Sell Ores AFK & Money Guide – Earn Faster While Offline",
+    description:
+      "AFK setup checklist for Sell Ores: fill slots, max drones, hold time skips, and fix money bottlenecks — without invented $/hour formulas.",
   },
   beginner: {
     path: "/beginner",
@@ -68,6 +98,23 @@ export const SEO_PAGES = {
       "Terms for the unofficial Sell Ores Roblox fan wiki. Not affiliated with Roblox or The Ore Drillers. Contact contact@sellores.site.",
   },
 } as const satisfies Record<string, SeoPage>
+
+/** Short labels for UI + BreadcrumbList (not full SEO titles). */
+export const PAGE_SHORT_LABEL: Record<string, string> = {
+  "/": "Home",
+  "/codes": "Codes",
+  "/ores": "Ores",
+  "/pets": "Pets",
+  "/gears": "Gears",
+  "/mutations": "Mutations",
+  "/upgrades": "Upgrades",
+  "/floors": "Floors",
+  "/guides/afk-money": "AFK & Money",
+  "/beginner": "Beginner",
+  "/updates": "Updates",
+  "/privacy": "Privacy",
+  "/terms": "Terms",
+}
 
 export function createPageMetadata(page: SeoPage): Metadata {
   const siteUrl = getSiteUrl()

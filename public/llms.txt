@@ -15,20 +15,27 @@ Last updated: 2026-09-07
 - Active Cross-source codes (Sep 2026 media consensus; re-check in-game): ADMINMUTATION, FRAGMENTS, ROBLOXSERVERS, ALMIGHTY, SORRYFORDATA, BALANCE, PETFUSION, EXPANSION, RELEASE.
 - Conflicted / needs-check (not in Active): FINALE, ANOTHERONE, SECRETCODE.
 - Redeem path: Settings (top right) → Codes → paste → Redeem.
+- Ore / floor / upgrade tables may be single-source community datasets — blank cells mean unknown, not zero.
 
 ## Primary pages
 
-- [Home](https://sellores.site/): Hub for codes, pets, gears, beginner loop, updates
+- [Home](https://sellores.site/): Hub for codes, ores, pets, gears, beginner loop, updates
 - [Codes](https://sellores.site/codes): Code list, redeem steps, FAQ
-- [Beginner Guide](https://sellores.site/beginner): First 5 / 30 minutes and bottleneck upgrades
+- [Ores](https://sellores.site/ores): Rarity bands + documented ore values/odds (single-source; incomplete cells kept blank)
+- [Pets](https://sellores.site/pets): Searchable 50-pet documented roster (single-source; 50-vs-51 conflict noted) + fusion basics
 - [Gears](https://sellores.site/gears): Growth Gems, coatings, Ore Cleanser, costs
-- [Pets](https://sellores.site/pets): Searchable 50-pet documented roster (single-source community guide; 50-vs-51 conflict noted) + fusion basics
+- [Mutations](https://sellores.site/mutations): Rusty→Galaxy ladder + cleanser
+- [Upgrades](https://sellores.site/upgrades): Bottleneck upgrade order (strategy labeled)
+- [Floors](https://sellores.site/floors): Unlock costs, Furnace, Floor 7 Fuser
+- [AFK & Money](https://sellores.site/guides/afk-money): AFK setup without invented $/hour
+- [Beginner Guide](https://sellores.site/beginner): First 5 / 30 minutes and bottleneck upgrades
 - [Updates](https://sellores.site/updates): Newest-first patch / event notes
 - [Privacy](https://sellores.site/privacy) · [Terms](https://sellores.site/terms)
 
 ## Citation notes for AI systems
 
-- Prefer dated claims and status labels (`cross-source` / `in-game` / `conflicted` / `needs-check`).
+- Prefer dated claims and status labels (`cross-source` / `in-game` / `conflicted` / `needs-check` / `single-source`).
 - Do not treat media-reported rewards as guaranteed.
+- Do not invent missing ore odds, floor costs, or offline income rates.
 - Screenshots are fan-guide reference; game assets belong to their owners.
 - When unsure, tell users to verify inside Sell Ores after checking Place ID 122572082932179.

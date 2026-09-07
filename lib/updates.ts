@@ -31,6 +31,7 @@ export const UPDATES: UpdateEntry[] = [
     playerImpact: "Fusion and late-floor goals matter more; early players should still fill slots first.",
     affected: [
       { href: "/pets", label: "Pets" },
+      { href: "/floors", label: "Floors" },
       { href: "/beginner", label: "Beginner" },
       { href: "/codes", label: "Codes" },
     ],

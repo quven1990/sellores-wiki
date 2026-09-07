@@ -42,6 +42,7 @@ export function CodeTable({
   enableFilter?: boolean
 }) {
   const [filter, setFilter] = useState<"all" | CodeStatus>("all")
+  const [query, setQuery] = useState("")
   const [redeemed, setRedeemed] = useState<Record<string, boolean>>({})
   const [hideRedeemed, setHideRedeemed] = useState(false)
 
@@ -72,41 +73,53 @@ export function CodeTable({
     if (enableFilter && filter !== "all") {
       rows = rows.filter((c) => c.status === filter)
     }
+    const q = query.trim().toLowerCase()
+    if (enableFilter && q) {
+      rows = rows.filter((c) => `${c.code} ${c.reward}`.toLowerCase().includes(q))
+    }
     if (enableRedeemed && hideRedeemed) {
       rows = rows.filter((c) => !redeemed[c.code])
     }
     return rows
-  }, [codes, enableFilter, enableRedeemed, filter, hideRedeemed, redeemed])
+  }, [codes, enableFilter, enableRedeemed, filter, hideRedeemed, query, redeemed])
 
   return (
     <div className="space-y-4">
       {enableFilter ? (
-        <div className="flex flex-wrap items-center gap-2">
-          {FILTERS.map((f) => (
-            <button
-              key={f.id}
-              type="button"
-              onClick={() => setFilter(f.id)}
-              className={cn(
-                "rounded-md border px-3 py-1.5 text-xs font-medium transition",
-                filter === f.id
-                  ? "border-primary bg-primary/15 text-primary"
-                  : "border-border text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {f.label}
-            </button>
-          ))}
-          {enableRedeemed ? (
-            <label className="ml-auto flex items-center gap-2 text-xs text-muted-foreground">
-              <input
-                type="checkbox"
-                checked={hideRedeemed}
-                onChange={(e) => setHideRedeemed(e.target.checked)}
-              />
-              Hide redeemed
-            </label>
-          ) : null}
+        <div className="space-y-3">
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search code or reward…"
+            className="w-full rounded-md border border-border bg-surface-2 px-3 py-2 text-sm text-foreground sm:max-w-sm"
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            {FILTERS.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => setFilter(f.id)}
+                className={cn(
+                  "rounded-md border px-3 py-1.5 text-xs font-medium transition",
+                  filter === f.id
+                    ? "border-primary bg-primary/15 text-primary"
+                    : "border-border text-muted-foreground hover:text-foreground",
+                )}
+              >
+                {f.label}
+              </button>
+            ))}
+            {enableRedeemed ? (
+              <label className="ml-auto flex items-center gap-2 text-xs text-muted-foreground">
+                <input
+                  type="checkbox"
+                  checked={hideRedeemed}
+                  onChange={(e) => setHideRedeemed(e.target.checked)}
+                />
+                Hide redeemed
+              </label>
+            ) : null}
+          </div>
         </div>
       ) : null}
 

@@ -8,6 +8,7 @@ import { Callout, PageHero, Section, TextLink } from "@/components/ui-blocks"
 import { ACTIVE_CODES } from "@/lib/codes"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
 import { CONTENT_AS_OF, CONTENT_MONTH, GAME_URL, PLACE_ID } from "@/lib/site"
+import { UPDATES } from "@/lib/updates"
 
 export const metadata = createPageMetadata(SEO_PAGES.home)
 
@@ -34,6 +35,8 @@ const LOOP = [
   },
 ]
 
+const LATEST_UPDATE = UPDATES[0]
+
 export default function HomePage() {
   return (
     <>
@@ -41,7 +44,7 @@ export default function HomePage() {
       <PageHero
         eyebrow={`Updated ${CONTENT_MONTH}`}
         title="Sell Ores Wiki"
-        description="Quick answers for Sell Ores: code status, gear costs, pet and fusion help, and the fastest beginner progression route."
+        description="Quick answers for Sell Ores: working code status, gear costs, ore values, pet and fusion help, and the fastest beginner progression route."
         imageSrc={GAME_SHOTS.realityOre.src}
         imageAlt={GAME_SHOTS.realityOre.alt}
         actions={
@@ -86,9 +89,11 @@ export default function HomePage() {
       <Section title="Most used now">
         <div className="divide-y divide-border border-y border-border">
           <TextLink href="/codes" title="Codes" blurb="Copy-ready list with Cross-source / Conflicted status." />
+          <TextLink href="/ores" title="Ore values" blurb="Rarity bands, odds, and buy prices where documented." />
           <TextLink href="/beginner" title="Beginner route" blurb="First 5 minutes, first 30 minutes, upgrade decisions." />
           <TextLink href="/gears" title="Gears" blurb="Growth Gems, coatings, costs, and buy timing." />
           <TextLink href="/pets" title="Pets & fusion" blurb="Searchable 50-pet roster with boosts + fusion basics." />
+          <TextLink href="/mutations" title="Mutations" blurb="Rusty → Galaxy multipliers and cleanser notes." />
           <TextLink href="/updates" title="Updates" blurb="Newest-first patch notes with player impact." />
         </div>
       </Section>
@@ -107,7 +112,7 @@ export default function HomePage() {
           {[
             { href: "/codes", title: "Redeem codes", blurb: "Grab skips / gems before grinding." },
             { href: "/beginner", title: "Fill slots", blurb: "Keep drones busy before expensive boosts." },
-            { href: "/gears", title: "Buy the bottleneck", blurb: "Spend on the slowest step, not random upgrades." },
+            { href: "/upgrades", title: "Buy the bottleneck", blurb: "Spend on the slowest step, not random upgrades." },
           ].map((card) => (
             <Link
               key={card.href}
@@ -120,6 +125,22 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
+
+      {LATEST_UPDATE ? (
+        <Section title="Latest update">
+          <Link
+            href="/updates"
+            className="block rounded-xl border border-border bg-surface p-5 transition hover:border-primary/50"
+          >
+            <p className="font-mono text-xs text-cyan">{LATEST_UPDATE.date}</p>
+            <p className="mt-1 font-display text-xl font-semibold text-foreground">
+              {LATEST_UPDATE.title}
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">{LATEST_UPDATE.playerImpact}</p>
+            <p className="mt-3 text-sm text-primary">Full changelog →</p>
+          </Link>
+        </Section>
+      ) : null}
 
       <Section title="Core loop">
         <div className="grid gap-4 lg:grid-cols-12">
@@ -162,8 +183,8 @@ export default function HomePage() {
       <NextUsefulStep
         links={[
           { href: "/codes", title: "Codes", blurb: "Copy the latest Cross-source list." },
+          { href: "/ores", title: "Ores", blurb: "See rarity bands and documented values." },
           { href: "/beginner", title: "Beginner guide", blurb: "Turn codes into a first-hour plan." },
-          { href: "/gears", title: "Gears", blurb: "Spend cash where it removes the bottleneck." },
         ]}
       />
     </>

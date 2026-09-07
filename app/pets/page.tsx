@@ -1,9 +1,11 @@
 import Link from "next/link"
 
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GAME_SHOTS } from "@/components/game-shot"
 import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
 import { PetRoster } from "@/components/pet-roster"
+import { YouTubeLite } from "@/components/youtube-lite"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
 import { PET_BUFF_CATEGORIES, PET_SYSTEM } from "@/lib/pets"
 import { PET_ROSTER_META } from "@/lib/pets-roster"
@@ -15,6 +17,7 @@ export default function PetsPage() {
   return (
     <>
       <JsonLd page={SEO_PAGES.pets} />
+      <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Pets" }]} />
       <PageHero
         eyebrow="Lucky Blocks · Fusion"
         title="Sell Ores Pets"
@@ -80,6 +83,12 @@ export default function PetsPage() {
           balance are checked.
         </p>
       </Section>
+
+      <YouTubeLite
+        page="/pets"
+        heading="See the pet/fusion system in-game"
+        supporting="Only reviewed embeds appear here."
+      />
 
       <NextUsefulStep
         links={[

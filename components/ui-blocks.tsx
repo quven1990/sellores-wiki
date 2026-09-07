@@ -33,6 +33,9 @@ export function PageHero({
           <img
             src={imageSrc}
             alt={imageAlt}
+            width={1600}
+            height={900}
+            fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover object-[70%_center] sm:object-center"
           />
           <div className="absolute inset-0 bg-[#070014]/60 sm:bg-[#070014]/55" />

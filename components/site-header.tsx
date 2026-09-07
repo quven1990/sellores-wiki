@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
-import { PRIMARY_NAV } from "@/lib/navigation"
+import { GUIDE_NAV, PRIMARY_NAV } from "@/lib/navigation"
 import { SITE_NAME } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
@@ -19,6 +19,8 @@ export function SiteHeader() {
           <img
             src="/brand/icon.png"
             alt=""
+            width={36}
+            height={36}
             className="size-9 rounded-xl border border-primary/40 object-cover"
           />
           <span className="min-w-0 leading-tight">
@@ -31,12 +33,12 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
           {PRIMARY_NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground"
+              className="rounded-md px-2.5 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -52,7 +54,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md border border-border p-2 md:hidden"
+            className="inline-flex items-center justify-center rounded-md border border-border p-2 lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
@@ -63,12 +65,25 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "border-t border-border bg-surface md:hidden",
+          "border-t border-border bg-surface lg:hidden",
           open ? "block" : "hidden",
         )}
       >
         <nav className="mx-auto flex max-w-6xl flex-col px-4 py-3" aria-label={SITE_NAME}>
           {PRIMARY_NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-md px-3 py-2.5 text-sm text-foreground hover:bg-muted"
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <p className="mt-2 px-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Guides
+          </p>
+          {GUIDE_NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}

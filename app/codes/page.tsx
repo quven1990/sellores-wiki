@@ -1,8 +1,10 @@
 import Link from "next/link"
 
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { CodeTable } from "@/components/code-table"
 import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
+import { YouTubeLite } from "@/components/youtube-lite"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
 import { ACTIVE_CODES, CONFLICTED_CODES, countByStatus } from "@/lib/codes"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
@@ -18,6 +20,7 @@ export default function CodesPage() {
   return (
     <>
       <JsonLd page={SEO_PAGES.codes} />
+      <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Codes" }]} />
       <PageHero
         eyebrow={CONTENT_MONTH}
         title="Sell Ores Codes"
@@ -105,6 +108,12 @@ export default function CodesPage() {
           </div>
         </div>
       </Section>
+
+      <YouTubeLite
+        page="/codes"
+        heading="Redeem walkthrough"
+        supporting="Optional video below the code list — only appears after manual review."
+      />
 
       <NextUsefulStep
         links={[

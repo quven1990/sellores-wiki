@@ -14,7 +14,14 @@ export function GameShot({
   return (
     <figure className={cn("overflow-hidden rounded-2xl border border-border bg-surface", className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} className="aspect-video w-full object-cover" loading="lazy" />
+      <img
+        src={src}
+        alt={alt}
+        width={1280}
+        height={720}
+        className="aspect-video w-full object-cover"
+        loading="lazy"
+      />
       {caption ? (
         <figcaption className="border-t border-border px-4 py-2.5 text-xs text-muted-foreground">
           {caption}

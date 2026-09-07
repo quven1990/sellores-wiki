@@ -1,9 +1,11 @@
 import Link from "next/link"
 
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GAME_SHOTS, GameShot } from "@/components/game-shot"
 import { GearToolkit } from "@/components/gear-toolkit"
 import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
+import { YouTubeLite } from "@/components/youtube-lite"
 import { Callout, PageHero, Section } from "@/components/ui-blocks"
 import { GEARS } from "@/lib/gears"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
@@ -14,6 +16,7 @@ export default function GearsPage() {
   return (
     <>
       <JsonLd page={SEO_PAGES.gears} />
+      <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Gears" }]} />
       <PageHero
         eyebrow="Gear Shop"
         title="Sell Ores Gears: Prices, Effects & Buy Order"
@@ -77,15 +80,25 @@ export default function GearsPage() {
           <Link href="/beginner" className="text-primary hover:underline">
             beginner bottleneck guide
           </Link>
+          {" · "}
+          <Link href="/mutations" className="text-primary hover:underline">
+            mutation ladder
+          </Link>
           .
         </p>
       </Section>
 
+      <YouTubeLite
+        page="/gears"
+        heading="See gear progression in-game"
+        supporting="Only reviewed embeds appear here."
+      />
+
       <NextUsefulStep
         links={[
+          { href: "/mutations", title: "Mutations", blurb: "Map coatings to the ×1.5–×5 ladder." },
           { href: "/beginner", title: "Beginner route", blurb: "Confirm the bottleneck before spending." },
-          { href: "/codes", title: "Codes", blurb: "Redeem gem / skip codes first." },
-          { href: "/pets", title: "Pets", blurb: "Compare pet buffs vs gear spend." },
+          { href: "/ores", title: "Ores", blurb: "Stamp keepers, not filler commons." },
         ]}
       />
     </>

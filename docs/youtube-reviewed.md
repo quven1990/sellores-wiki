@@ -1,13 +1,13 @@
-# Reviewed YouTube embeds
+# Reviewed YouTube videos
 
-No reviewed video IDs yet.
+Populate `lib/youtube-reviewed.ts` only after a human reviews a specific video.
 
-Do **not** render YouTube modules until an ID is added here with:
-- page path
-- video ID
-- title
-- creator
-- why it helps the page task
-- reviewed date / reviewer
+Rules (from SEO toolkit `08_ENGAGEMENT_TOOLS_AND_YOUTUBE.md`):
 
-Empty on purpose (SEO toolkit 08 — no invented embeds).
+- No invented video IDs, titles, creators, or view counts
+- No autoplay
+- Click-to-load only (`components/youtube-lite.tsx`)
+- Empty list renders nothing
+- Prefer placing beginner video after the checklist, never above codes table
+
+Current reviewed list: **empty**
