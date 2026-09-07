@@ -36,12 +36,26 @@ export default function PrivacyPage() {
             .
           </p>
           <p>
+            We also use Microsoft Clarity (project ID <span className="font-mono">yenkx7w44e</span>)
+            for session insights such as clicks, scrolls, and anonymized heatmaps/recordings. Microsoft
+            may set cookies or use similar technologies under{" "}
+            <a
+              className="text-primary underline-offset-2 hover:underline"
+              href="https://privacy.microsoft.com/privacystatement"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Microsoft’s Privacy Statement
+            </a>
+            .
+          </p>
+          <p>
             We do not require accounts, we do not sell personal data, and we do not collect Roblox
             account credentials. Hosting providers may also process standard server logs (IP, user
             agent, request path) to operate the site.
           </p>
           <p>
-            You can limit analytics via browser controls, extensions, or Google’s{" "}
+            You can limit analytics via browser controls or extensions, Google’s{" "}
             <a
               className="text-primary underline-offset-2 hover:underline"
               href="https://tools.google.com/dlpage/gaoptout"
@@ -49,8 +63,17 @@ export default function PrivacyPage() {
               rel="noreferrer"
             >
               Analytics opt-out
+            </a>
+            , or Clarity’s{" "}
+            <a
+              className="text-primary underline-offset-2 hover:underline"
+              href="https://clarity.microsoft.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              product controls
             </a>{" "}
-            tools where available.
+            where available.
           </p>
           <p>
             Privacy questions:{" "}

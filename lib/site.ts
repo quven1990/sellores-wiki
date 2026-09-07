@@ -19,3 +19,5 @@ export const CONTACT_EMAIL = "contact@sellores.site"
 export const PRIVACY_EMAIL = "privacy@sellores.site"
 /** Google Analytics 4 measurement ID */
 export const GA_MEASUREMENT_ID = "G-GGQY9W5MCT"
+/** Microsoft Clarity project ID */
+export const CLARITY_PROJECT_ID = "yenkx7w44e"

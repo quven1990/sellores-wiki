@@ -89,7 +89,7 @@ export const SEO_PAGES = {
     path: "/privacy",
     title: "Privacy Policy – Sell Ores Wiki",
     description:
-      "How Sell Ores Wiki handles visitor data. No accounts required. Uses Google Analytics for aggregate traffic. Contact privacy@sellores.site.",
+      "How Sell Ores Wiki handles visitor data. No accounts required. Uses Google Analytics and Microsoft Clarity. Contact privacy@sellores.site.",
   },
   terms: {
     path: "/terms",
