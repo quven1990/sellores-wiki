@@ -17,7 +17,7 @@ export function SiteHeader() {
         <Link href="/" className="flex min-w-0 items-center gap-2.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/icon.png"
+            src="/brand/favicon-mark.png"
             alt=""
             width={36}
             height={36}

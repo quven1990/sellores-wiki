@@ -1,7 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sell Ores Wiki">
+  <defs>
+    <linearGradient id="g" x1="18" y1="8" x2="48" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64ecf5"/>
+      <stop offset=".45" stop-color="#de08aa"/>
+      <stop offset="1" stop-color="#7a2ad8"/>
+    </linearGradient>
+  </defs>
   <rect width="64" height="64" rx="14" fill="#070014"/>
-  <path d="M32 10 L50 40 L32 52 L14 40 Z" fill="#a24ac8"/>
-  <path d="M32 16 L44 38 L32 46 L20 38 Z" fill="#de08aa"/>
-  <path d="M32 22 L38 36 L32 40 L26 36 Z" fill="#64ecf5"/>
-  <circle cx="32" cy="30" r="3" fill="#f7f4ff"/>
+  <path d="M32 8 L50 26 L32 56 L14 26 Z" fill="url(#g)"/>
+  <path d="M32 8 L50 26 L32 30 Z" fill="#9af6fb" fill-opacity=".9"/>
+  <path d="M32 8 L14 26 L32 30 Z" fill="#f0a0df" fill-opacity=".85"/>
+  <path d="M14 26 L32 56 L32 30 Z" fill="#8b2fc4"/>
+  <path d="M50 26 L32 56 L32 30 Z" fill="#c41f9a"/>
+  <circle cx="32" cy="27" r="3.2" fill="#f7f4ff"/>
 </svg>
