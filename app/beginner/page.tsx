@@ -1,9 +1,10 @@
 import Link from "next/link"
 
+import { BeginnerChecklist } from "@/components/beginner-checklist"
 import { GAME_SHOTS, GameShot } from "@/components/game-shot"
 import { JsonLd } from "@/components/json-ld"
 import { NextUsefulStep } from "@/components/next-useful-step"
-import { Callout, PageHero, Section } from "@/components/ui-blocks"
+import { PageHero, Section } from "@/components/ui-blocks"
 import { createPageMetadata, SEO_PAGES } from "@/lib/seo"
 
 export const metadata = createPageMetadata(SEO_PAGES.beginner)
@@ -29,14 +30,6 @@ const LOOP = [
     shot: GAME_SHOTS.sellStation,
     caption: "Sell station with (E) SELL.",
   },
-]
-
-const CHECKLIST_30 = [
-  "Redeem Cross-source codes (Settings → Codes)",
-  "Fill every usable slot before buying luxury boosts",
-  "Keep drones busy — idle drones mean wasted rolls",
-  "Spend on the slowest step: regen, drill speed, or slots",
-  "Skip premium Lucky Blocks until income feels stable",
 ]
 
 export default function BeginnerPage() {
@@ -116,18 +109,7 @@ export default function BeginnerPage() {
       </Section>
 
       <Section title="First 30-minute checklist">
-        <Callout>
-          Checklist tip: tick these mentally or in a notes app. A localStorage checklist tool can
-          come later — the order below is the useful part.
-        </Callout>
-        <ol className="mt-4 space-y-2 text-sm text-muted-foreground">
-          {CHECKLIST_30.map((item, i) => (
-            <li key={item} className="flex gap-3">
-              <span className="font-mono text-primary">{i + 1}.</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ol>
+        <BeginnerChecklist />
       </Section>
 
       <NextUsefulStep

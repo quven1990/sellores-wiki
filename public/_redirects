@@ -1,0 +1,4 @@
+# www → apex (Cloudflare Pages)
+https://www.sellores.site/* https://sellores.site/:splat 301
+http://www.sellores.site/* https://sellores.site/:splat 301
+http://sellores.site/* https://sellores.site/:splat 301

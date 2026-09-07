@@ -43,6 +43,7 @@ export function CodeTable({
 }) {
   const [filter, setFilter] = useState<"all" | CodeStatus>("all")
   const [redeemed, setRedeemed] = useState<Record<string, boolean>>({})
+  const [hideRedeemed, setHideRedeemed] = useState(false)
 
   useEffect(() => {
     if (!enableRedeemed) return
@@ -67,14 +68,20 @@ export function CodeTable({
   }
 
   const visible = useMemo(() => {
-    if (!enableFilter || filter === "all") return codes
-    return codes.filter((c) => c.status === filter)
-  }, [codes, enableFilter, filter])
+    let rows = codes
+    if (enableFilter && filter !== "all") {
+      rows = rows.filter((c) => c.status === filter)
+    }
+    if (enableRedeemed && hideRedeemed) {
+      rows = rows.filter((c) => !redeemed[c.code])
+    }
+    return rows
+  }, [codes, enableFilter, enableRedeemed, filter, hideRedeemed, redeemed])
 
   return (
     <div className="space-y-4">
       {enableFilter ? (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {FILTERS.map((f) => (
             <button
               key={f.id}
@@ -90,6 +97,16 @@ export function CodeTable({
               {f.label}
             </button>
           ))}
+          {enableRedeemed ? (
+            <label className="ml-auto flex items-center gap-2 text-xs text-muted-foreground">
+              <input
+                type="checkbox"
+                checked={hideRedeemed}
+                onChange={(e) => setHideRedeemed(e.target.checked)}
+              />
+              Hide redeemed
+            </label>
+          ) : null}
         </div>
       ) : null}
 
