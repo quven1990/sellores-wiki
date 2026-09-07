@@ -42,19 +42,19 @@ export default function AfkMoneyPage() {
       </Section>
 
       <Section title="AFK setup checklist">
-        <ol className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-          <li>1. Fill every open slot with your best affordable keepers.</li>
-          <li>2. Max Drill Speed + Regen on active floors so drones don’t idle.</li>
-          <li>3. Clear furnace queues if Floor 3+ is unlocked.</li>
+        <ol className="list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground marker:text-cyan">
+          <li>Fill every open slot with your best affordable keepers.</li>
+          <li>Max Drill Speed + Regen on active floors so drones don’t idle.</li>
+          <li>Clear furnace queues if Floor 3+ is unlocked.</li>
           <li>
-            4. Hold long Time Skips from{" "}
+            Hold long Time Skips from{" "}
             <Link href="/codes" className="text-primary hover:underline">
               codes
             </Link>{" "}
             until slots are productive.
           </li>
           <li>
-            5. Optional: stamp a cheap coating on keepers via{" "}
+            Optional: stamp a cheap coating on keepers via{" "}
             <Link href="/mutations" className="text-primary hover:underline">
               mutations
             </Link>

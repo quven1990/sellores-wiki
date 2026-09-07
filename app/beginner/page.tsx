@@ -48,17 +48,17 @@ export default function BeginnerPage() {
       />
 
       <Section title="First 5 minutes">
-        <ol className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-          <li>1. Confirm you are on the correct Sell Ores Place ID.</li>
+        <ol className="list-decimal space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground marker:text-cyan">
+          <li>Confirm you are on the correct Sell Ores Place ID.</li>
           <li>
-            2. Redeem codes first — see the{" "}
+            Redeem codes first — see the{" "}
             <Link href="/codes" className="text-primary hover:underline">
               codes list
             </Link>
             .
           </li>
-          <li>3. Roll an ore, place it in a slot, and wait for drones (don’t pocket the ore).</li>
-          <li>4. Sell the first crate so you understand the cash loop.</li>
+          <li>Roll an ore, place it in a slot, and wait for drones (don’t pocket the ore).</li>
+          <li>Sell the first crate so you understand the cash loop.</li>
         </ol>
       </Section>
 

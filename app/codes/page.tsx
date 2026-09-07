@@ -47,17 +47,17 @@ export default function CodesPage() {
       </Section>
 
       <Section title="How to redeem">
-        <ol className="space-y-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <ol className="list-decimal space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground marker:text-cyan sm:text-base">
           <li>
-            1. Join{" "}
+            Join{" "}
             <a href={GAME_URL} className="text-primary hover:underline" target="_blank" rel="noreferrer">
               Sell Ores
             </a>{" "}
             and confirm Place ID <span className="font-mono text-foreground">{PLACE_ID}</span>.
           </li>
-          <li>2. Open the Settings gear (top right).</li>
-          <li>3. Find Codes → paste exactly → Redeem.</li>
-          <li>4. If you see Invalid / Already Redeemed, skip — do not spam retries.</li>
+          <li>Open the Settings gear (top right).</li>
+          <li>Find Codes → paste exactly → Redeem.</li>
+          <li>If you see Invalid / Already Redeemed, skip — do not spam retries.</li>
         </ol>
       </Section>
 
