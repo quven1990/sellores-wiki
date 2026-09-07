@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://sellores.site",
-  "description": "Unofficial Sell Ores Roblox wiki \u2014 codes, pets, gears, beginner guide",
+  "description": "Unofficial Sell Ores Roblox wiki — codes, pets, gears, beginner guide",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "deploy": "pnpm build && wrangler pages deploy out --project-name=sellores-wiki --commit-dirty=true"
   },
   "dependencies": {
@@ -24,6 +24,8 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.6",
     "postcss": "^8.5",
     "tailwindcss": "^4.2.0",
     "typescript": "5.7.3",

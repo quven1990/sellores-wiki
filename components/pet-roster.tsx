@@ -90,24 +90,12 @@ export function PetRoster() {
         </p>
       </div>
 
-      <ul className="space-y-3 md:hidden">
-        {visible.map((pet) => (
-          <li key={pet.name} className="rounded-xl border border-border bg-surface p-4">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="font-display text-base font-semibold text-foreground">{pet.name}</p>
-                <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">
-                  {pet.tier} · slot {pet.chance}
-                </p>
-              </div>
-              <p className="shrink-0 font-mono text-sm text-primary">+{pet.moneyBoost} money</p>
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">{pet.ability}</p>
-          </li>
-        ))}
-      </ul>
-
-      <div className="hidden overflow-x-auto rounded-xl border border-border bg-surface md:block">
+      <div
+        className="overflow-x-auto rounded-xl border border-border bg-surface"
+        role="region"
+        aria-label="Sell Ores pet roster"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[860px] text-left text-sm">
           <thead className="border-b border-border bg-surface-2 text-muted-foreground">
             <tr>

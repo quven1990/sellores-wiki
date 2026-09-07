@@ -145,8 +145,8 @@ export default function BeginnerPage() {
         links={[
           { href: "/codes", title: "Codes", blurb: "Redeem skips and gems before the grind." },
           { href: "/upgrades", title: "Upgrades", blurb: "Bottleneck buy order after the first hour." },
-          { href: "/ores", title: "Ores", blurb: "Know which keepers to place." },
           { href: "/gears", title: "Gears", blurb: "See Growth Gem / coating timing." },
+          { href: "/guides/afk-money", title: "AFK & Money", blurb: "Set up productive slots before leaving." },
         ]}
       />
     </>

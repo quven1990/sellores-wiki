@@ -50,6 +50,8 @@ export function CodeTable({
     if (!enableRedeemed) return
     try {
       const raw = localStorage.getItem(STORAGE_KEY)
+      // Hydration-safe client restore from browser storage.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setRedeemed(JSON.parse(raw) as Record<string, boolean>)
     } catch {
       /* ignore */
@@ -123,47 +125,12 @@ export function CodeTable({
         </div>
       ) : null}
 
-      <ul className="space-y-3 md:hidden">
-        {visible.map((entry) => (
-          <li key={entry.code} className="rounded-xl border border-border bg-surface p-4">
-            <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0">
-                <p className="font-mono text-lg font-semibold text-primary">{entry.code}</p>
-                <p className="mt-1 text-sm text-foreground">{entry.reward}</p>
-              </div>
-              <CopyButton value={entry.code} className="shrink-0" />
-            </div>
-            {!dense ? (
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                <span
-                  title={CODE_STATUS_HINT[entry.status]}
-                  className={cn(
-                    "inline-flex rounded-full border px-2 py-0.5 text-xs",
-                    STATUS_CLASS[entry.status],
-                  )}
-                >
-                  {CODE_STATUS_LABEL[entry.status]}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  Checked {entry.lastCheckedAt}
-                </span>
-              </div>
-            ) : null}
-            {enableRedeemed ? (
-              <label className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
-                <input
-                  type="checkbox"
-                  checked={Boolean(redeemed[entry.code])}
-                  onChange={() => toggleRedeemed(entry.code)}
-                />
-                Mark redeemed (saved on this device)
-              </label>
-            ) : null}
-          </li>
-        ))}
-      </ul>
-
-      <div className="hidden overflow-x-auto rounded-xl border border-border bg-surface md:block">
+      <div
+        className="overflow-x-auto rounded-xl border border-border bg-surface"
+        role="region"
+        aria-label="Sell Ores codes"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[720px] text-left text-sm">
           <thead className="border-b border-border bg-surface-2 text-muted-foreground">
             <tr>

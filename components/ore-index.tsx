@@ -64,39 +64,12 @@ export function OreIndex() {
         </p>
       </div>
 
-      <ul className="space-y-3 md:hidden">
-        {visible.map((ore) => (
-          <li key={ore.name} className="rounded-xl border border-border bg-surface p-4">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="font-display text-base font-semibold">{ore.name}</p>
-                <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">
-                  {ore.rarity}
-                </p>
-              </div>
-              <p className="shrink-0 font-mono text-xs text-primary">{cell(ore.buyPrice)}</p>
-            </div>
-            <dl className="mt-3 grid gap-1 text-sm text-muted-foreground">
-              <div>
-                <span className="text-foreground/80">Odds: </span>
-                {cell(ore.rollOdds)}
-              </div>
-              <div>
-                <span className="text-foreground/80">Cash seen: </span>
-                {cell(ore.cashSeen)}
-              </div>
-              {ore.notes ? (
-                <div>
-                  <span className="text-foreground/80">Note: </span>
-                  {ore.notes}
-                </div>
-              ) : null}
-            </dl>
-          </li>
-        ))}
-      </ul>
-
-      <div className="hidden overflow-x-auto rounded-xl border border-border bg-surface md:block">
+      <div
+        className="overflow-x-auto rounded-xl border border-border bg-surface"
+        role="region"
+        aria-label="Sell Ores ore index"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[920px] text-left text-sm">
           <thead className="border-b border-border bg-surface-2 text-muted-foreground">
             <tr>

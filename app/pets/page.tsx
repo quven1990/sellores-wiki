@@ -92,8 +92,8 @@ export default function PetsPage() {
 
       <NextUsefulStep
         links={[
+          { href: "/floors", title: "Floors & Fusion", blurb: "See the Floor 7 Fuser and unlock notes." },
           { href: "/beginner", title: "Beginner route", blurb: "When pets fit into the first hour." },
-          { href: "/gears", title: "Gears", blurb: "Compare pet buffs vs gem/coating spend." },
           { href: "/codes", title: "Codes", blurb: "Redeem Growth Gem codes before buying blocks." },
         ]}
       />

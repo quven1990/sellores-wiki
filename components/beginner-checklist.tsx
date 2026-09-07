@@ -78,6 +78,8 @@ export function BeginnerChecklist() {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY)
+      // Hydration-safe client restore from browser storage.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setDone(JSON.parse(raw) as Record<string, boolean>)
     } catch {
       /* ignore */

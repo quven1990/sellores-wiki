@@ -28,9 +28,26 @@ export default function GearsPage() {
       <Section>
         <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
           <Callout>
-            Prices and multipliers below are aggregated from public guides. Spot-check 2–3 rows
-            in-game before treating the table as final. Wallet “Next target” is only the next higher
-            sourced price — not an invented meta ranking.
+            Source status: <strong>Cross-source</strong>. Prices and effects agree between{" "}
+            <a
+              href="https://allthings.how/every-gear-in-sell-ores-cost-and-effect/"
+              className="text-primary hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              AllThings.How
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.sportskeeda.com/roblox-news/sell-ores-a-beginner-s-guide"
+              className="text-primary hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Sportskeeda
+            </a>
+            , checked 2026-09-08. This is not an in-game check by this wiki. Wallet “Next target”
+            is only the next higher sourced price — not an invented meta ranking.
           </Callout>
           <GameShot
             {...GAME_SHOTS.drones}

@@ -8,6 +8,15 @@ import { cn } from "@/lib/utils"
 type KindFilter = "all" | GearKind
 type SortMode = "price-asc" | "price-desc" | "name"
 
+const SOURCE_STATUS_LABEL: Record<GearEntry["sourceStatus"], string> = {
+  "in-game": "In-game checked",
+  "gameplay-observed": "Gameplay observed",
+  "cross-source": "Cross-source",
+  "single-source": "Single-source",
+  conflicted: "Conflicted",
+  "needs-check": "Needs check",
+}
+
 function parseWallet(input: string): number | null {
   const cleaned = input.trim().replace(/[$,\s]/g, "")
   if (!cleaned) return null
@@ -29,7 +38,7 @@ export function GearToolkit({ gears }: { gears: GearEntry[] }) {
   const wallet = parseWallet(walletRaw)
 
   const visible = useMemo(() => {
-    let rows = kind === "all" ? [...gears] : gears.filter((g) => g.kind === kind)
+    const rows = kind === "all" ? [...gears] : gears.filter((g) => g.kind === kind)
     rows.sort((a, b) => {
       if (sort === "name") return a.name.localeCompare(b.name)
       if (sort === "price-desc") return b.costValue - a.costValue
@@ -104,37 +113,12 @@ export function GearToolkit({ gears }: { gears: GearEntry[] }) {
         <p className="text-sm text-accent">Wallet format not recognized. Try `50M`, `1B`, or `500000`.</p>
       ) : null}
 
-      <ul className="space-y-3 md:hidden">
-        {visible.map((gear) => {
-          const affordable = wallet !== null && gear.costValue <= wallet
-          return (
-            <li
-              key={gear.name}
-              className={cn(
-                "rounded-xl border bg-surface p-4",
-                affordable ? "border-ore/50 bg-ore/5" : "border-border",
-              )}
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="font-display text-base font-semibold text-foreground">{gear.name}</p>
-                  <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">
-                    {GEAR_KIND_LABEL[gear.kind]}
-                  </p>
-                </div>
-                <p className="shrink-0 font-mono text-sm text-primary">{gear.cost}</p>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">{gear.effect}</p>
-              <p className="mt-2 text-xs uppercase tracking-wide text-accent">
-                {gear.verifiedInGame ? "In-game checked" : "Needs check"}
-                {affordable ? " · Affordable" : ""}
-              </p>
-            </li>
-          )
-        })}
-      </ul>
-
-      <div className="hidden overflow-x-auto rounded-xl border border-border bg-surface md:block">
+      <div
+        className="overflow-x-auto rounded-xl border border-border bg-surface"
+        role="region"
+        aria-label="Sell Ores gear prices and effects"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[720px] text-left text-sm">
           <thead className="border-b border-border bg-surface-2 text-muted-foreground">
             <tr>
@@ -161,7 +145,7 @@ export function GearToolkit({ gears }: { gears: GearEntry[] }) {
                   <td className="px-4 py-3 font-mono text-primary">{gear.cost}</td>
                   <td className="px-4 py-3 text-muted-foreground">{gear.effect}</td>
                   <td className="px-4 py-3 text-xs uppercase tracking-wide text-accent">
-                    {gear.verifiedInGame ? "In-game checked" : "Needs check"}
+                    {SOURCE_STATUS_LABEL[gear.sourceStatus]}
                     {affordable ? " · Affordable" : ""}
                   </td>
                 </tr>
